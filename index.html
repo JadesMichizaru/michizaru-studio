@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Michizaru Studio | Desain, Web & Academic Solution</title>
     <meta name="description" content="Michizaru Studio | Layanan pembuatan website company profile, toko online, dan sekolah profesional. Proses cepat, desain modern glassmorphic, dan gratis konsulitasi.">
     <meta property="og:title" content="Michizaru Studio - Partner Digital & Akademik">
@@ -10,538 +11,370 @@
     <meta property="og:image" content="https://michizaru-studio.vercel.app/assets/img/og-preview.jpg">
     <meta property="og:url" content="https://michizaru-studio.vercel.app">
     <script src="https://cdn.tailwindcss.com"></script>
+=======
+
+    <!-- SEO METADATA -->
+    <title>Michizaru Studio | IT Consulting, Web Development & Academic Tech Solutions</title>
+    <meta name="description" content="Penyedia layanan pengembangan arsitektur website enterprise, platform e-commerce, dan asistensi teknis akademik. Kami mengedepankan efisiensi deployment, desain UI/UX modern, dan konsultasi IT komprehensif.">
+    <meta name="keywords" content="Michizaru Studio, Birohmatika, IT Solutions, Web Development, UI/UX Design, Academic Tech Solutions, Digital Agency, Glassmorphism UI">
+    <meta name="author" content="Michizaru Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michizaru-studio.vercel.app">
+
+    <!-- OPEN GRAPH FOR SOCIAL MEDIA -->
+    <meta property="og:title" content="Michizaru Studio - Mitra Transformasi Digital & Solusi Akademik">
+    <meta property="og:description" content="Layanan Pengembangan Web, Perancangan UI/UX, dan Asistensi Proyek Akademik berstandar Profesional.">
+    <meta property="og:image" content="https://michizaru-studio.vercel.app/assets/img/og-preview.jpg">
+    <meta property="og:url" content="https://michizaru-studio.vercel.app">
+    <meta property="og:type" content="website">
+
+>>>>>>> f1a92d2 (Revised Core of Features)
     <link rel="icon" type="image/x-icon" href="assets/img/icon-michizaru-studio.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed, #db2777, #2563eb);
-            background-size: 300% 300%;
-            animation: gradientBG 15s ease infinite;
-            color: #ffffff;
-            min-height: 100vh;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Glassmorphism Styles */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        .glass-input {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            backdrop-filter: blur(6px);
-        }
-
-        .glass-input::placeholder { color: rgba(255, 255, 255, 0.6); }
-
-        .glass-btn-primary {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .glass-btn-primary:hover {
-            background: rgba(255, 255, 255, 0.4);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
-
-        @keyframes pulse-slow {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
-        }
-        .pulse-bg { animation: pulse-slow 8s infinite ease-in-out; }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="text-white">
+<body>
 
     <!-- NAVBAR WITH HAMBURGER MENU -->
-    <nav class="fixed w-full z-[100] glass-nav">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-extrabold text-white tracking-tight" data-aos="fade-right" data-aos-duration="1500">
-                MICHIZARU<span class="text-pink-400">STUDIO</span>
-            </div>
+    <nav class="navbar glass">
+        <div class="nav-brand">MICHIZARU<span>STUDIO</span></div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex space-x-8 font-semibold text-sm uppercase tracking-wider items-center" data-aos="fade-left" data-aos-duration="1500">
-                <a href="#home" class="hover:text-pink-300 transition">Beranda</a>
-                <a href="#about" class="hover:text-pink-300 transition">Tentang</a>
-                <a href="#services" class="hover:text-pink-300 transition">Layanan</a>
-                <a href="#website-katalog" class="hover:text-pink-300 transition">Katalog Web</a>
-                <a href="#pricing" class="hover:text-pink-300 transition">Harga</a>
-                <a href="#contact" class="glass-btn-primary text-white px-6 py-2.5 rounded-full transition shadow-lg">Order Sekarang</a>
-            </div>
-
-            <!-- Hamburger Button (Mobile & Android) -->
-            <button id="menu-btn" class="lg:hidden text-white focus:outline-none p-2 rounded-lg bg-white/10 border border-white/20">
-                <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden glass-card mx-4 my-2 p-6 rounded-2xl flex flex-col space-y-4 font-semibold text-center border border-white/20">
-            <a href="#home" class="mobile-link py-2 hover:text-pink-300 transition border-b border-white/10">Beranda</a>
-            <a href="#about" class="mobile-link py-2 hover:text-pink-300 transition border-b border-white/10">Tentang</a>
-            <a href="#services" class="mobile-link py-2 hover:text-pink-300 transition border-b border-white/10">Layanan</a>
-            <a href="#website-katalog" class="mobile-link py-2 hover:text-pink-300 transition border-b border-white/10">Katalog Web</a>
-            <a href="#pricing" class="mobile-link py-2 hover:text-pink-300 transition border-b border-white/10">Harga</a>
-            <a href="#contact" class="mobile-link glass-btn-primary py-3 rounded-xl text-white font-bold block mt-2">Order Sekarang</a>
-        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Company Profile</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#website-katalog">Katalog Sistem</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#team">Tim Teknis</a></li>
+            <li><a href="#contact" class="glass-btn btn-nav">Inisiasi Proyek</a></li>
+        </ul>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="relative pt-44 pb-24 overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="100">
-                Partner Kreatif & Akademik Terpercaya
+    <!-- SECTION 1: HERO (Gradasi 1) -->
+    <section id="home" class="section grad-1 pt-hero">
+        <div class="hero-content glass" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="badge-tag" data-aos="fade-down" data-aos-delay="100">
+                Mitra Ekosistem Digital & Edu-Tech Terpercaya
             </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter leading-tight text-white" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
-                Wujudkan Ide Anda, <br><span class="text-pink-300">Selesaikan Tugas Anda.</span>
+            <h1 data-aos="zoom-in" data-aos-delay="200">
+                Akselerasi Bisnis Digital, <br><span>Optimasi Produktivitas Anda.</span>
             </h1>
-            <p class="text-white/80 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                Kami hadir memberikan layanan Desain Grafis, Pembuatan Website, dan Bantuan Tugas Akademik dengan standar profesional dan harga yang transparan.
+            <p data-aos="fade-up" data-aos-delay="300">
+                Kami menyediakan layanan rekayasa perangkat lunak, perancangan UI/UX, dan dukungan penyelesaian proyek akademik dengan Quality Assurance (QA) berstandar industri serta transparansi Service Level Agreement (SLA).
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
-                <a href="#pricing" class="glass-btn-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition shadow-2xl">Lihat Paket Harga</a>
-                <a href="#about" class="glass-card text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition">Tentang Kami</a>
+            <div class="hero-action-btns" data-aos="fade-up" data-aos-delay="400">
+                <a href="#pricing" class="glass-btn btn-hero-primary">Eksplorasi Layanan & Harga</a>
+                <a href="#about" class="glass-btn btn-hero-secondary">Company Overview</a>
             </div>
-        </div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0">
-            <div class="pulse-bg absolute top-20 left-10 w-72 h-72 bg-purple-400 rounded-full blur-[100px]"></div>
-            <div class="pulse-bg absolute bottom-10 right-10 w-72 h-72 bg-pink-400 rounded-full blur-[100px]"></div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 overflow-hidden relative">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1500">
-                    <div class="relative">
-                        <img src="assets/img/hero-bg.jpg" alt="Team" class="rounded-[2.5rem] shadow-2xl relative z-10 border border-white/20">
-                        <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-pink-500/30 rounded-full blur-2xl -z-0"></div>
+    <!-- SECTION 2: ABOUT & COUNTER (Gradasi 2) -->
+    <section id="about" class="section grad-2">
+        <div class="container flex-row" data-aos="fade-up">
+            <div class="about-img-box" data-aos="fade-right">
+                <img src="assets/img/hero-bg.jpg" alt="Team Michizaru Studio" class="glass-img">
+            </div>
+
+            <div class="about-text-box" data-aos="fade-left">
+                <h4 class="sub-title">Company Overview</h4>
+                <h2>Agensi IT Terintegrasi dengan Fokus pada Skalabilitas dan Inovasi.</h2>
+                <p>
+                    Michizaru Studio merupakan penyedia solusi IT komprehensif untuk digitalisasi bisnis dan asistensi teknis akademik. Melalui kemitraan strategis dengan
+                    <a href="https://www.birohmatika.com/" target="_blank" rel="noreferrer" class="link-highlight">Birohmatika.com</a>, kami mengimplementasikan metodologi kerja yang agile untuk memastikan setiap deployment proyek berjalan efisien, aman, dan berstandar enterprise.
+                </p>
+
+                <div class="counter-grid" id="counter-section">
+                    <div class="glass-card counter-card" data-aos="zoom-in" data-aos-delay="100">
+                        <h3><span class="counter" data-target="30">0</span>+</h3>
+                        <p>Sistem Ter-deploy</p>
                     </div>
-                </div>
-
-                <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1500">
-                    <h4 class="text-pink-300 font-bold tracking-widest uppercase text-sm mb-4">Tentang Kami</h4>
-                    <h2 class="text-4xl font-extrabold mb-6 leading-tight text-white">Kami Adalah Tim Kreatif Yang Berfokus Pada Hasil.</h2>
-                    <p class="text-white/80 mb-8 leading-relaxed">
-                        Michizaru Studio hadir sebagai solusi komprehensif bagi kebutuhan digital dan akademik Anda. Melalui kolaborasi strategis dengan
-                        <a href="https://www.birohmatika.com/" class="text-pink-300 font-bold hover:underline">Birohmatika.com</a>,
-                        kami memastikan setiap proyek dikerjakan dengan efisiensi tinggi tanpa mengorbankan kualitas standar profesional.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-8" id="counter-section">
-                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-pink-400" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
-                            <h3 class="text-5xl font-extrabold text-white mb-1">
-                                <span class="counter" data-target="30">0</span>+
-                            </h3>
-                            <p class="text-xs text-white/70 font-bold uppercase tracking-widest mt-1">Proyek Selesai</p>
-                        </div>
-                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-pink-400" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
-                            <h3 class="text-5xl font-extrabold text-white mb-1">
-                                <span class="counter" data-target="95">0</span>%
-                            </h3>
-                            <p class="text-xs text-white/70 font-bold uppercase tracking-widest mt-1">Kepuasan Klien</p>
-                        </div>
+                    <div class="glass-card counter-card" data-aos="zoom-in" data-aos-delay="200">
+                        <h3><span class="counter" data-target="95">0</span>%</h3>
+                        <p>Client Success Rate</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1500">
-                <h2 class="text-4xl font-extrabold mb-4 text-white">Layanan Unggulan</h2>
-                <div class="w-20 h-1.5 bg-pink-400 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-10 rounded-[2rem] group hover:bg-white/20 transition duration-500" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Design Grafis</h3>
-                    <p class="text-white/70 leading-relaxed">Pembuatan logo, desain konten sosial media, UI/UX, hingga banner promosi yang menarik mata.</p>
+    <!-- SECTION 3: SERVICES (Gradasi 3) -->
+    <section id="services" class="section grad-3">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center">Core Competencies & Services</h2>
+            <div class="divider"></div>
+
+            <div class="card-grid">
+                <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX & Visual Design</h3>
+                    <p>Perancangan antarmuka pengguna berbasis User-Centered Design (UCD) dan branding aset digital untuk mengoptimalkan user experience dan tingkat konversi.</p>
                 </div>
 
-                <div class="glass-card p-10 rounded-[2rem] group hover:bg-white/20 transition duration-500" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Web Development</h3>
-                    <p class="text-white/70 leading-relaxed">Membangun website responsif, modern, dan cepat untuk bisnis maupun portofolio pribadi Anda.</p>
+                <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">💻</div>
+                    <h3>Full-Stack Web Development</h3>
+                    <p>Arsitektur dan pengembangan aplikasi berbasis web yang responsif, scalable, dan teroptimasi SEO menggunakan teknologi framework terkini.</p>
                 </div>
 
-                <div class="glass-card p-10 rounded-[2rem] group hover:bg-white/20 transition duration-500" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Joki Tugas</h3>
-                    <p class="text-white/70 leading-relaxed">Bantuan pengerjaan tugas kuliah, skripsi, olah data, dan laporan dengan jaminan privasi terjaga.</p>
-                </div>
-
-                <div class="glass-card p-10 rounded-[2rem] group hover:bg-white/20 transition duration-500" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Web Development</h3>
-                    <p class="text-white/70 leading-relaxed">Membangun website responsif, modern, dan cepat untuk bisnis maupun portofolio pribadi Anda.</p>
+                <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">📚</div>
+                    <h3>Academic Tech Assistance</h3>
+                    <p>Layanan konsultasi teknis, pengolahan data terstruktur, dan problem-solving untuk proyek riset akademik dengan kepatuhan tinggi terhadap privasi data klien.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION LIST WEBSITE (3 SAMPLE DI DIATAS SECTION PRICING) -->
-    <section id="website-katalog" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1500">
-                <span class="text-pink-300 font-bold uppercase tracking-widest text-xs">Pilihan Produk Website</span>
-                <h2 class="text-4xl font-extrabold mb-4 text-white">Jenis Website Siap Pakai</h2>
-                <div class="w-20 h-1.5 bg-pink-400 mx-auto rounded-full"></div>
-            </div>
+    <!-- SECTION 4: KATALOG WEBSITE (Gradasi 4) -->
+    <section id="website-katalog" class="section grad-4">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center">Katalog Sistem & Solusi Terintegrasi</h2>
+            <div class="divider"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card-grid">
                 <!-- 1. Company Profile -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                    <div>
-                        <div class="text-3xl mb-4">🏢</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Company Profile</h3>
-                        <p class="text-white/70 text-sm mb-6">Tingkatkan kredibilitas & citra bisnis Anda dengan profil perusahaan profesional.</p>
-                        <ul class="text-xs text-white/80 space-y-2 mb-8">
-                            <li>✓ Desain Kustom Responsive</li>
-                            <li>✓ Halaman Informasi Lengkap</li>
-                            <li>✓ Integrasi WhatsApp Direct</li>
-                            <li>✓ SEO Basic Integration</li>
-                        </ul>
+                <div class="glass-card catalog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="catalog-header">
+                        <div class="card-icon"><img src="assets/img/template-3.png" class="glass-img"></div>
+                        <h3>Corporate Landing Page</h3>
+                        <p>Tingkatkan presensi digital bisnis Anda dengan antarmuka yang kredibel.<br><br>
+                        <strong>Key Features:</strong> Mobile-First Responsive UI, Optimasi Kecepatan (PageSpeed), dan Integrasi CMS Dasar untuk pembaruan konten mandiri.</p>
                     </div>
-                    <a href="#contact" class="glass-btn-primary py-3 rounded-xl text-center font-bold text-sm block">Konsultasi Dulu</a>
+                    <a href="#contact" class="glass-btn btn-card">Konsultasi Kebutuhan</a>
                 </div>
 
                 <!-- 2. Toko Online -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between border-2 border-pink-400 relative" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <span class="absolute -top-3 right-6 bg-pink-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Populer</span>
-                    <div>
-                        <div class="text-3xl mb-4">🛍️</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Toko Online / Kuliner</h3>
-                        <p class="text-white/70 text-sm mb-6">Buka toko 24 jam dengan sistem katalog interaktif dan pemesanan instan.</p>
-                        <ul class="text-xs text-white/80 space-y-2 mb-8">
-                            <li>✓ Katalog Produk Interaktif</li>
-                            <li>✓ Sistem Keranjang Belanja</li>
-                            <li>✓ Hitung Ongkir Otomatis</li>
-                            <li>✓ Order WA / Payment Gateway</li>
-                        </ul>
+                <div class="glass-card catalog-card popular-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="badge-populer">High Demand</span>
+                    <div class="catalog-header">
+                        <div class="card-icon"><img src="assets/img/template-2.png" class="glass-img"></div>
+                        <h3>E-Commerce Platform</h3>
+                        <p>Infrastruktur transaksi digital untuk mengakselerasi penjualan online bisnis Anda.<br><br>
+                        <strong>Key Features:</strong> Integrasi Payment Gateway Otomatis, Manajemen Inventaris Real-Time, dan Dashboard Analitik Penjualan Kustom.</p>
                     </div>
-                    <a href="#contact" class="bg-pink-500 hover:bg-pink-600 transition py-3 rounded-xl text-center font-bold text-sm block text-white shadow-lg">Order Sekarang</a>
+                    <a href="#contact" class="glass-btn btn-card-highlight">Inisiasi Proyek</a>
                 </div>
 
                 <!-- 3. Website Penginapan -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <div>
-                        <div class="text-3xl mb-4">🏨</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Website Penginapan</h3>
-                        <p class="text-white/70 text-sm mb-6">Sistem booking kamar mandiri secara langsung tanpa potongan komisi OTA.</p>
-                        <ul class="text-xs text-white/80 space-y-2 mb-8">
-                            <li>✓ Galeri Foto Tampilan HD</li>
-                            <li>✓ Cek Kalender Ketersediaan</li>
-                            <li>✓ Direct Booking Mandiri</li>
-                            <li>✓ Integrasi Google Maps</li>
-                        </ul>
+                <div class="glass-card catalog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="catalog-header">
+                        <div class="card-icon"><img src="assets/img/template-4.png" class="glass-img"></div>
+                        <h3>Hospitality Booking Engine</h3>
+                        <p>Property Management System (PMS) mandiri untuk efisiensi bisnis perhotelan.<br><br>
+                        <strong>Key Features:</strong> Kalender Sinkronisasi Real-Time, Manajemen Ketersediaan Kamar, dan Direct Booking Engine Tanpa Potongan Komisi OTA.</p>
                     </div>
-                    <a href="#contact" class="glass-btn-primary py-3 rounded-xl text-center font-bold text-sm block">Konsultasi Dulu</a>
+                    <a href="#contact" class="glass-btn btn-card">Konsultasi Kebutuhan</a>
                 </div>
             </div>
 
-            <!-- Button Lihat Selengkapnya -->
-            <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="1500">
-                <a href="list-website.html" class="glass-btn-primary px-8 py-4 rounded-2xl font-bold text-base inline-flex items-center gap-3 hover:scale-105 transition shadow-2xl">
-                    <span>Lihat Selengkapnya</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
+            <div class="text-center mt-30">
+                <a href="list-website.html" class="glass-btn btn-hero-primary">Jelajahi Portofolio Sistem &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="py-24">
-      <div class="relative isolate px-6 py-24 sm:py-32 lg:px-8">
+    <!-- SECTION 5: PRICING (Gradasi 5) -->
+    <section id="pricing" class="section grad-5">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center">Investasi IT yang Terukur dan Skalabel</h2>
+            <p class="text-subtitle text-center">Dapatkan infrastruktur digital premium dengan Cost-Benefit Ratio yang optimal untuk mendukung kapabilitas operasional Anda.</p>
+            <div class="divider"></div>
 
-        <div class="mx-auto max-w-4xl text-center" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="100">
-          <h2 class="text-base/7 font-semibold text-pink-300">Pricing</h2>
-          <p class="mt-2 text-5xl font-semibold tracking-tight text-white sm:text-6xl">Solusi Digital untuk Kebutuhan Anda</p>
-          <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-white/70 sm:text-xl/8">Pilih layanan profesional dengan harga kompetitif untuk mendukung kesuksesan akademik dan bisnis Anda.</p>
-        </div>
-
-        <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-stretch gap-y-6 sm:mt-20 lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8">
-
-          <!-- Joki Tugas -->
-          <div class="glass-card flex flex-col justify-between rounded-3xl p-8 sm:p-10 transition-all hover:bg-white/20" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="100">
-            <div>
-              <h3 id="tier-academic" class="text-base/7 font-semibold text-pink-300">Joki Tugas</h3>
-              <span class="text-white/80 text-sm italic">Mulai dari</span>
-              <p class="mt-4 flex items-baseline gap-x-2">
-                <span class="text-5xl font-semibold tracking-tight text-white">Rp. 20K</span>
-                <span class="text-base text-white/70">/tugas</span>
-              </p>
-              <p class="mt-6 text-sm text-white/80">Solusi cepat untuk membantu tugas harian hingga tugas akhir Anda.</p>
-
-              <ul role="list" class="mt-8 space-y-4 text-sm/6 text-white/90">
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>PPT, Makalah, & Pengerjaan Skripsi</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Spesialis <strong class="text-white">Informatika & Akuntansi</strong></span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Analisis Data & Web Scraping</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Flowchart & Struktur Organisasi</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="mt-8 block rounded-xl glass-btn-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white transition-colors">Pesan Sekarang</a>
-          </div>
-
-          <!-- Pembuatan Website (Populer) -->
-          <div class="glass-card border-2 border-pink-400 relative flex flex-col justify-between rounded-3xl p-8 sm:p-10 transform lg:scale-105 z-10" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-            <div>
-              <div class="flex justify-between items-center">
-                <h3 id="tier-web" class="text-base/7 font-semibold text-pink-300">Pembuatan Website</h3>
-                <span class="rounded-full bg-pink-500/20 px-2.5 py-1 text-xs font-semibold text-pink-300 border border-pink-400/30">Populer</span>
-              </div>
-              <span class="text-white/80 text-sm italic">Mulai dari</span>
-              <p class="mt-4 flex items-baseline gap-x-2">
-                <span class="text-5xl font-semibold tracking-tight text-white">Rp. 450K</span>
-                <span class="text-base text-white/70">/proyek</span>
-              </p>
-              <p class="mt-6 text-sm text-white/80">Pengembangan website custom yang responsif, modern, dan fungsional.</p>
-
-              <ul role="list" class="mt-8 space-y-4 text-sm/6 text-white/90">
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Website <strong class="text-white">Dinamis & Statis</strong> (React, Laravel, NextJS)</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Responsive Design (Mobile, Tablet, Desktop)</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Bantuan <strong class="text-white">Setup Hosting & Domain</strong></span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Sistem Kustom (LMS, Absensi, E-Commerce)</span>
-                </li>
-              </ul>
-            </div>
-            <a href="list-website.html" class="mt-8 block rounded-xl bg-pink-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-pink-600 transition-colors">Lihat Selengkapnya</a>
-          </div>
-
-          <!-- Layanan Desain -->
-          <div class="glass-card flex flex-col justify-between rounded-3xl p-8 sm:p-10 transition-all hover:bg-white/20" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="100">
-            <div>
-              <h3 id="tier-design" class="text-base/7 font-semibold text-pink-300">Layanan yang Kami Berikan</h3>
-              <span class="text-white/80 text-sm italic">Mulai dari</span>
-              <p class="mt-4 flex items-baseline gap-x-2">
-                <span class="text-5xl font-semibold tracking-tight text-white">Rp. 70K</span>
-                <span class="text-base text-white/70">/desain</span>
-              </p>
-              <p class="mt-6 text-sm text-white/80">Visual kreatif untuk memperkuat identitas brand atau proyek Anda.</p>
-
-              <ul role="list" class="mt-8 space-y-4 text-sm/6 text-white/90">
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span><strong class="text-white">UI/UX Design:</strong> Prototype High-Fidelity</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Desain Poster, Brosur, & Infografis</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Branding Identity & Logo Design</span>
-                </li>
-                <li class="flex items-start gap-x-3">
-                  <svg class="h-6 w-5 flex-none text-pink-300" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Revisi Sampai <strong class="text-white">Puas</strong> <br> Catatan: Harga lebih mahal</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="mt-8 block rounded-xl glass-btn-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white transition-colors">Lihat Portofolio</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM SECTION -->
-    <section class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-16 text-white" data-aos="fade-up" data-aos-duration="1500">Tim Profesional Kami</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="group" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="100">
-                    <div class="relative inline-block scale-110">
-                        <img src="assets/img/male-picture-2.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 grayscale group-hover:grayscale-0 transition duration-500 shadow-2xl ring-4 ring-pink-400">
-                        <span class="absolute bottom-4 right-2 bg-pink-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-md">Owner</span>
-                    </div>
-                    <h5 class="font-bold text-lg mt-4 text-white">Alif</h5>
-                    <p class="text-pink-300 text-xs font-bold uppercase">Lead Back-End Engineer</p>
-                    <p class="text-white/60 text-[10px] mt-1 font-medium">Academic Solution Specialist</p>
+            <div class="card-grid pricing-grid">
+                <!-- Tier 1: Joki Tugas -->
+                <div class="glass-card pricing-card" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="tier-name">Academic Tech Support</h3>
+                    <span class="price-start">Investasi Mulai</span>
+                    <div class="price">Rp 20K <span>/task</span></div>
+                    <p class="price-desc">Asistensi teknis dan analitikal komprehensif untuk resolusi riset dan proyek akhir Anda.</p>
+                    <ul class="feature-list">
+                        <li>✓ Penyusunan Dokumen & Technical Writing</li>
+                        <li>✓ Perancangan Algoritma & Modul Akuntansi</li>
+                        <li>✓ Data Mining, Scraping, & Analisis Statistik</li>
+                        <li>✓ Desain Arsitektur (UML, ERD, Flowchart)</li>
+                    </ul>
+                    <a href="#contact" class="glass-btn btn-card">Request Bantuan</a>
                 </div>
 
-                <div class="group" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
-                    <img src="assets/img/male-picture-3.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 grayscale group-hover:grayscale-0 transition duration-500 shadow-xl border-2 border-white/20">
-                    <h5 class="font-bold text-lg text-white">Fachrur Rozi</h5>
-                    <p class="text-pink-300 text-xs font-bold uppercase">Business Analyst</p>
-                    <p class="text-white/60 text-[10px] mt-1 font-medium">Birohmatika Team</p>
+                <!-- Tier 2: Web Dev (Populer) -->
+                <div class="glass-card pricing-card popular-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="badge-populer">Enterprise Choice</span>
+                    <h3 class="tier-name">Web App Development</h3>
+                    <span class="price-start">Investasi Mulai</span>
+                    <div class="price">Rp 1,5 Jt <span>/deployment</span></div>
+                    <p class="price-desc">Siklus pengembangan perangkat lunak (SDLC) penuh untuk sistem web berperforma tinggi.</p>
+                    <ul class="feature-list">
+                        <li>✓ Tech Stack Modern (React, Laravel, NextJS)</li>
+                        <li>✓ UI/UX Responsif dengan Pendekatan Mobile-First</li>
+                        <li>✓ Implementasi Basic SEO & Search Engine Indexing</li>
+                        <li>✓ Setup Infrastruktur Cloud & Domain Management</li>
+                    </ul>
+                    <a href="list-website.html" class="glass-btn btn-card-highlight">Lihat Skema Harga Lengkap</a>
                 </div>
 
-                <div class="group" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300">
-                    <img src="assets/img/male-picture-3.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 grayscale group-hover:grayscale-0 transition duration-500 shadow-xl border-2 border-white/20">
-                    <h5 class="font-bold text-lg text-white">Zacky</h5>
-                    <p class="text-pink-300 text-xs font-bold uppercase">Front-End Developer</p>
-                    <p class="text-white/60 text-[10px] mt-1 font-medium">Birohmatika Team</p>
-                </div>
-
-                <div class="group" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
-                    <img src="assets/img/images.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 grayscale group-hover:grayscale-0 transition duration-500 shadow-xl border-2 border-white/20">
-                    <h5 class="font-bold text-lg text-white">Ridwan</h5>
-                    <p class="text-pink-300 text-xs font-bold uppercase">UI/UX Designer</p>
-                    <p class="text-white/60 text-[10px] mt-1 font-medium">Michizaru Team</p>
+                <!-- Tier 3: Desain -->
+                <div class="glass-card pricing-card" data-aos="fade-left" data-aos-delay="300">
+                    <h3 class="tier-name">Creative & UI/UX Services</h3>
+                    <span class="price-start">Investasi Mulai</span>
+                    <div class="price">Rp 70K <span>/asset</span></div>
+                    <p class="price-desc">Perancangan visual strategis untuk memperkuat brand identity dan interaksi antarmuka.</p>
+                    <ul class="feature-list">
+                        <li>✓ Prototyping High-Fidelity & Wireframing</li>
+                        <li>✓ Digital Marketing Assets & Infografis Interaktif</li>
+                        <li>✓ Corporate Branding & Perancangan Logotype</li>
+                        <li>✓ Quality Assurance & Penyesuaian Visual (Maks. 2 Iterasi)</li>
+                    </ul>
+                    <a href="#contact" class="glass-btn btn-card">Tinjau Portofolio Visual</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24">
-        <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1500">
-            <div class="glass-card rounded-[3rem] p-12 md:p-20 text-white flex flex-col md:flex-row items-center gap-12 overflow-hidden relative shadow-2xl">
+    <!-- SECTION 6: TEAM (Gradasi 1) -->
+    <section id="team" class="section grad-1">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center">Meet Our Core Engineering Team</h2>
+            <div class="divider"></div>
 
-                <div class="md:w-1/2 relative z-10">
-                    <h2 class="text-4xl font-extrabold mb-6">Siap Memulai Project?</h2>
-                    <p class="text-white/80 mb-10 leading-relaxed">Tim kami akan merespon dalam waktu kurang dari 30 menit.</p>
-                    <div class="space-y-6 text-sm font-bold uppercase tracking-widest">
-                        <div class="flex items-center gap-4"><span class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">📍</span> Jakarta, Indonesia</div>
-                        <div class="flex items-center gap-4"><span class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">📞</span> +62 812-8867-7669</div>
-                        <div class="flex items-center gap-4"><span class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">📧</span> jades1355@gmail.com</div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="avatar-box owner-box">
+                        <img src="assets/img/foto-diri-sendiri.png" alt="Alif" class="avatar">
+                        <span class="role-badge">Founder</span>
+                    </div>
+                    <h5>Alif</h5>
+                    <p class="role">Lead Back-End Engineer</p>
+                    <span class="sub-role">Academic Solution Specialist</span>
+                </div>
+
+                <div class="team-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="avatar-box">
+                        <img src="assets/img/male-picture-3.jpg" alt="Fachrur Rozi" class="avatar">
+                    </div>
+                    <h5>Fachrur Rozi</h5>
+                    <p class="role">Business Analyst</p>
+                    <span class="sub-role">Birohmatika Alliance</span>
+                </div>
+
+                <div class="team-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="avatar-box">
+                        <img src="assets/img/male-picture-3.jpg" alt="Zacky" class="avatar">
+                    </div>
+                    <h5>Zacky</h5>
+                    <p class="role">Front-End Developer</p>
+                    <span class="sub-role">Birohmatika Alliance</span>
+                </div>
+
+                <div class="team-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="avatar-box">
+                        <img src="assets/img/IMG-20260727-WA0001.jpg" alt="Ridwan" class="avatar">
+                    </div>
+                    <h5>Ridwan</h5>
+                    <p class="role">UI/UX Designer</p>
+                    <span class="sub-role">Michizaru Core Team</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT FORM WHATSAPP (Gradasi 2) -->
+    <section id="contact" class="section grad-2">
+        <div class="container" data-aos="fade-up">
+            <div class="glass-panel contact-wrapper">
+                <div class="contact-info">
+                    <h2>Inisiasi Proyek Digital Anda</h2>
+                    <p>Tim teknis kami siap memvalidasi requirement sistem Anda dengan jaminan SLA respons kurang dari 30 menit.</p>
+                    <div class="contact-detail">
+                        <div>📍 Jakarta, Indonesia</div>
+                        <div>📞 +62 812-8867-7669</div>
+                        <div>📧 jades1355@gmail.com</div>
                     </div>
                 </div>
 
-                <div class="md:w-1/2 w-full glass-card rounded-[2rem] p-8 shadow-2xl relative z-10">
-                    <form id="whatsappForm" class="space-y-4">
-                        <input type="text" id="name" placeholder="Nama Lengkap" required
-                            class="w-full px-6 py-4 rounded-xl glass-input outline-none transition focus:ring-2 focus:ring-pink-400">
+                <div class="contact-form-box">
+                    <form id="whatsappForm" class="form-grid">
+                        <input type="text" id="name" placeholder="Nama Representatif / Instansi" required class="glass-input">
 
-                        <select id="service" class="w-full px-6 py-4 rounded-xl glass-input outline-none focus:ring-2 focus:ring-pink-400">
-                            <option value="Desain Grafis" class="text-slate-900">Desain Grafis</option>
-                            <option value="Web Development" class="text-slate-900">Web Development</option>
-                            <option value="Joki Tugas" class="text-slate-900">Joki Tugas</option>
+                        <select id="service" class="glass-input">
+                            <option value="Desain Grafis" class="opt-dark">UI/UX & Creative Design</option>
+                            <option value="Web Development" class="opt-dark">Software / Web Development</option>
+                            <option value="Joki Tugas" class="opt-dark">Academic Tech Support</option>
                         </select>
 
-                        <textarea id="message" rows="4" placeholder="Ceritakan kebutuhan Anda..." required
-                            class="w-full px-6 py-4 rounded-xl glass-input outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                        <textarea id="message" rows="4" placeholder="Deskripsikan spesifikasi kebutuhan teknis Anda..." required class="glass-input"></textarea>
 
-                        <button type="submit" class="w-full bg-pink-500 hover:bg-pink-600 transition text-white py-4 rounded-xl font-bold shadow-lg flex justify-center items-center gap-2">
-                            <span>Kirim via WhatsApp</span>
-                        </button>
+                        <button type="submit" class="glass-btn btn-card-highlight btn-full">Submit via WhatsApp Gateway</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-12 text-center border-t border-white/10 glass-nav">
-        <div class="container mx-auto px-6">
-            <div class="text-2xl font-extrabold text-white mb-6">MICHIZARU<span class="text-pink-400">STUDIO</span></div>
-            <div class="flex justify-center gap-6 mb-10 text-white/70 font-bold text-xs uppercase tracking-widest">
-                <a href="https://www.instagram.com/alifakb4r/" target="_blank" rel="noreferrer" class="hover:text-pink-300 transition">Instagram</a>
-                <a href="https://web.facebook.com/bambang.budi.796774/" target="_blank" rel="noreferrer" class="hover:text-pink-300 transition">Facebook</a>
-                <a href="https://www.linkedin.com/in/muhammad-alif-akbar-fachrul-azizi-71516a221/" target="_blank" rel="noreferrer" class="hover:text-pink-300 transition">LinkedIn</a>
+    <!-- FOOTER AGENSI PROFESIONAL -->
+    <footer class="grad-6 glass-footer">
+        <div class="footer-container" data-aos="fade-up">
+            <div class="footer-about">
+                <h2 class="footer-logo">MICHIZARU<span>STUDIO</span></h2>
+                <p>Penyedia Solusi Teknologi Informasi & Edu-Tech. Kami merancang arsitektur sistem web, optimalisasi antarmuka UI/UX, dan layanan asistensi akademik dengan standar enterprise serta efisiensi deployment maksimal.</p>
+
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/alifakb4r/" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://web.facebook.com/bambang.budi.796774/" target="_blank" rel="noreferrer">Facebook</a>
+                    <a href="https://www.linkedin.com/in/muhammad-alif-akbar-fachrul-azizi-71516a221/" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
             </div>
-            <p class="text-white/70 text-[12px] uppercase font-bold tracking-tighter">© 2026 Michizaru Studio</p>
-            <p class="text-white/50 text-[10px] uppercase font-bold tracking-tighter mt-1">Powered By <a class="text-pink-300" href="https://www.birohmatika.com/" target="_blank" rel="noreferrer">Birohmatika</a></p>
+
+            <div class="footer-links">
+                <h3>Katalog Layanan IT</h3>
+                <ul>
+                    <li><a href="#website-katalog">Portofolio Sistem Informasi</a></li>
+                    <li><a href="#services">UI/UX Prototyping</a></li>
+                    <li><a href="#pricing">Academic Problem Solving</a></li>
+                    <li><a href="#pricing">Infrastruktur & Cloud Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Hubungi Tim Kami</h3>
+                <p>📍 Jakarta, Indonesia</p>
+                <p>📞 +62 812-8867-7669</p>
+                <p>✉️ jades1355@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Michizaru Studio. Hak Cipta Dilindungi.</p>
+            <p class="powered-by">Sistem Terintegrasi dengan <a href="https://www.birohmatika.com/" target="_blank" rel="noreferrer">Birohmatika Alliance</a></p>
         </div>
     </footer>
 
-    <!-- AOS JS & Mobile Hamburger Menu Script -->
+    <!-- AI CHATBOT INTEGRATION WITH SECURITY -->
+    <div class="chatbot-container" data-aos="fade-left" data-aos-delay="500">
+        <div class="chatbot-btn glass" id="chat-toggle">💬 Virtual Assistant</div>
+        <div class="chatbot-box glass hidden" id="chat-box">
+            <div class="chat-header">
+                Michizaru AI Bot
+                <span id="close-chat">&times;</span>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <p><strong>System:</strong> Koneksi terenkripsi (End-to-End).</p>
+                <p><strong>AI:</strong> Halo! Saya AI representatif Michizaru. Apakah ada yang bisa kami bantu terkait eskalasi proyek web, perancangan UI/UX, atau asistensi teknis akademik Anda?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Input perintah atau pertanyaan Anda...">
+                <button id="chat-send-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1500, once: true });
-
-        // Logic Hamburger Menu Android/Mobile
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
     <script src="assets/script.js"></script>
 </body>
 </html>
