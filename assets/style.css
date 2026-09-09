@@ -698,3 +698,114 @@ body {
 
     .hero-content h1 { font-size: 2rem; }
 }
+
+/* ============================================================
+   14. CRO ADDITIONS — Catalog Cards, Demo Buttons & Chatbot Chips
+   (Kompatibel dengan refactor index.html terbaru)
+   ============================================================ */
+
+/* Hero trust note */
+.hero-trust-note {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+}
+
+/* Badge harga estimasi pada kartu katalog */
+.badge-price {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(244, 114, 182, 0.15);
+    border: 1px solid var(--pink-accent);
+    color: var(--pink-accent);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* Popular card: geser badge populer agar tidak bertabrakan dgn badge harga */
+.popular-card .badge-price { margin-top: 18px; }
+
+/* Catatan transparansi harga di bawah daftar fitur */
+.price-note {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border-left: 3px solid var(--pink-accent);
+}
+
+/* Baris aksi ganda pada kartu katalog (CTA + Live Demo) */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* Tombol Live Demo */
+.btn-demo {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    color: var(--text-white);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.btn-demo:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-style: solid;
+    border-color: var(--pink-accent);
+    color: var(--pink-accent);
+}
+
+/* Catatan privasi di bawah tombol form */
+.form-note {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ============================================================
+   15. CHATBOT — QUICK SUGGESTION CHIPS
+   ============================================================ */
+.chat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 12px 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-chips .chip {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.chat-chips .chip:hover {
+    background: var(--pink-hover);
+    border-color: var(--pink-hover);
+    transform: translateY(-1px);
+}
+
+/* Tinggi chat body disesuaikan karena ada chips */
+.chat-body { height: 200px; }
+
+/* Link highlight di dalam chat */
+.chat-body a { color: var(--pink-accent); }

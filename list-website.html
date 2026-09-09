@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Infrastruktur Web | Michizaru Studio</title>
+
+    <!-- SEO METADATA -->
+    <title>Katalog Website & Demo Langsung | Michizaru Studio</title>
+    <meta name="description" content="Jelajahi 7+ sistem web siap pakai dari Michizaru Studio: website sekolah, toko online, company profile, booking hotel, perpustakaan, MLM & klinik. Cek estimasi harga & live demo.">
+    <meta name="keywords" content="katalog website, jasa pembuatan website sekolah, toko online, company profile, website klinik, website MLM, booking hotel, perpustakaan digital, Michizaru Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michizaru-studio.vercel.app/list-website.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Katalog Website Michizaru Studio — Lihat Demo Dulu, Baru Putuskan">
+    <meta property="og:description" content="7+ sistem web siap pakai dengan estimasi harga transparan. Coba live demo langsung.">
+    <meta property="og:image" content="https://michizaru-studio.vercel.app/assets/img/og-preview.jpg">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/x-icon" href="assets/img/icon-michizaru-studio.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/style.css">
 
     <style>
@@ -40,19 +52,85 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
         }
 
         .glass-btn-primary {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            border: none;
             color: #ffffff;
+            box-shadow: 0 4px 18px rgba(236, 72, 153, 0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .glass-btn-primary:hover {
-            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.04);
+            box-shadow: 0 6px 26px rgba(236, 72, 153, 0.6);
+        }
+
+        .glass-btn-demo {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px dashed rgba(255, 255, 255, 0.45);
+            color: #ffffff;
+            transition: all 0.25s ease;
+        }
+
+        .glass-btn-demo:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-style: solid;
+            border-color: #f472b6;
+            color: #f472b6;
+        }
+
+        .badge-price {
+            display: inline-block;
+            background: rgba(244, 114, 182, 0.15);
+            border: 1px solid #f472b6;
+            color: #f472b6;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            box-shadow: 0 4px 14px rgba(236, 72, 153, 0.5);
+        }
+
+        .feature-list li {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .price-note {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            line-height: 1.5;
+            padding: 9px 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            border-left: 3px solid #f472b6;
         }
     </style>
+<base target="_blank">
 </head>
 <body class="text-white">
 
@@ -71,94 +149,212 @@
     <!-- HEADER SECTION -->
     <section class="pt-36 pb-12">
         <div class="container mx-auto px-6 text-center" data-aos="fade-down" data-aos-duration="1000">
-            <span class="bg-white/10 backdrop-blur-md border border-white/20 text-pink-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">Enterprise Web Solutions</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Katalog Infrastruktur & Sistem Web</h1>
-            <p class="text-white/80 text-lg max-w-2xl mx-auto">Eksplorasi portofolio solusi perangkat lunak kami yang dirancang khusus untuk mengakselerasi transformasi digital dan skalabilitas operasional entitas bisnis Anda.</p>
+            <span class="bg-white/10 backdrop-blur-md border border-white/20 text-pink-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
+                ✅ 30+ Sistem Ter-deploy &middot; Estimasi Transparan &middot; Garansi Revisi
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Pilih Sistem Anda.<br class="md:hidden"> Lihat Demo Dulu, Baru Putuskan.</h1>
+            <p class="text-white/80 text-lg max-w-2xl mx-auto">
+                7+ jenis website siap pakai dengan estimasi harga transparan. Setiap kartu punya tombol
+                <strong class="text-pink-300">"▶ Live Demo"</strong> — coba langsung seperti pengunjung website Anda nanti. Semua paket termasuk domain, hosting, SSL & garansi support.
+            </p>
         </div>
     </section>
 
-    <!-- WEBSITES LIST (RESPONSIVE GRID & EQUAL HEIGHT FIX) -->
+    <!-- WEBSITES LIST -->
     <section class="py-12 pb-24">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
-                <!-- 1. Sistem Informasi Sekolah -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <!-- 1. Website Sekolah -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-1.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">1. Sistem Informasi Sekolah</h3>
-                        <p class="text-white/70 text-sm mb-6">Platform edukasi digital terintegrasi untuk publikasi akademik, portal siswa, dan otomasi Penerimaan Peserta Didik Baru (PPDB Online) berbasis cloud.</p>
+                        <span class="badge-price mb-4">Mulai Rp 2,5 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-1.png" alt="Demo Website Sekolah" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">1. Website Sekolah + PPDB Online</h3>
+                        <p class="text-white/70 text-sm mb-4">Yayasan & sekolah tampil lebih profesional di mata orang tua — pendaftaran siswa baru otomatis, tanpa antre berkas.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ PPDB online & pengumuman hasil seleksi otomatis</li>
+                            <li>✓ Portal siswa: jadwal, nilai & materi pelajaran</li>
+                            <li>✓ CMS berita & galeri kegiatan — update sendiri</li>
+                            <li>✓ SEO ready — mudah ditemukan wali murid</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Jumlah fitur portal menentukan harga final — konsultasi gratis.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Sekolah" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Sekolah.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="https://demo.michizaru-studio.vercel.app/sekolah" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 2. E-Commerce & F&B Platform -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between border-2 border-pink-400" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <!-- 2. E-Commerce & F&B -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative border-2 !border-pink-400" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <span class="badge-popular">🔥 Paling Diminati</span>
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-2.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">2. E-Commerce & F&B Platform</h3>
-                        <p class="text-white/70 text-sm mb-6">Infrastruktur transaksi digital dengan manajemen inventaris real-time, integrasi payment gateway otomatis, dan arsitektur UI/UX berkonversi tinggi.</p>
+                        <span class="badge-price mb-4 mt-4 inline-block">Mulai Rp 3,5 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-9.png" alt="Demo Toko Online" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">2. Toko Online / E-Commerce</h3>
+                        <p class="text-white/70 text-sm mb-4">Jualan 24 jam nonstop tanpa potongan marketplace. Order masuk otomatis, Anda tinggal kirim barang.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Payment gateway otomatis (QRIS, transfer, e-wallet)</li>
+                            <li>✓ Manajemen stok & produk real-time</li>
+                            <li>✓ Toast Notification</li>
+                            <li>✓ Admin dashboard, live chat & voucher diskon</li>
+                            <li>✓ Tombol wishlist untuk menandai produk favorit pelanggan.</li>
+                            <li><b>✓ Fully Responsive.</b></li>
+                            <li>✓ Smart Product Search.</li>
+                            <li>✓ Cart Persistence.</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi paket standar. Fitur kustom? Kami siapkan penawaran khusus.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Toko%20Online" target="_blank" rel="noreferrer" class="glass-btn-primary transition text-center py-3.5 rounded-xl font-bold text-sm block text-white shadow-lg">Inisiasi Proyek</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Toko%20Online.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="template-2/index.html" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 3. Corporate Landing Page -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <!-- 3. Company Profile -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-3.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">3. Corporate Landing Page</h3>
-                        <p class="text-white/70 text-sm mb-6">Tingkatkan presensi digital entitas bisnis Anda dengan antarmuka yang kredibel, arsitektur informasi terstruktur, dan optimasi visibilitas Search Engine (SEO).</p>
+                        <span class="badge-price mb-4">Mulai Rp 1,5 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-3.png" alt="Demo Company Profile" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">3. Website Company Profile</h3>
+                        <p class="text-white/70 text-sm mb-4">Tampil kredibel di mata calon klien & investor — bangun kepercayaan sejak klik pertama.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Desain premium mobile-first & responsive</li>
+                            <li>✓ SEO ready + optimasi kecepatan (PageSpeed)</li>
+                            <li>✓ Tombol WhatsApp & integrasi Google Maps</li>
+                            <li>✓ CMS — ubah konten sendiri tanpa coding</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Harga final menyesuaikan jumlah halaman. Konsultasikan gratis.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Company%20Profile" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Company%20Profile.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="https://demo.michizaru-studio.vercel.app/company-profile" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 4. Hospitality Booking Engine (Bug Fix Height & Text Optimized) -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <!-- 4. Homestay Booking -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-4.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">4. Hospitality Booking Engine</h3>
-                        <p class="text-white/70 text-sm mb-6">Property Management System (PMS) mandiri dengan sinkronisasi kalender ketersediaan real-time dan sistem reservasi langsung tanpa potongan komisi OTA.</p>
+                        <span class="badge-price mb-4">Mulai Rp 4 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-4.png" alt="Demo Website Booking Penginapan" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">4. Website Booking Penginapan</h3>
+                        <p class="text-white/70 text-sm mb-4">Hemat biaya komisi OTA hingga 20% — terima reservasi langsung dengan sistem booking mandiri.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Kalender ketersediaan kamar real-time</li>
+                            <li>✓ Direct booking tanpa potongan komisi</li>
+                            <li>✓ Payment gateway & konfirmasi otomatis</li>
+                            <li>✓ Tarif musiman + dashboard reservasi</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Jumlah kamar & integrasi menentukan harga final.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Penginapan" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Penginapan.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="template-4/index.html" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 5. Digital Library & OPAC System (Bug Fix Height & Text Optimized) -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <!-- 5. Website Perpustakaan -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-5.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">5. Website Perpustakaan</h3>
-                        <p class="text-white/70 text-sm mb-6">Transformasi manajemen pustaka menjadi ekosistem literasi digital terstruktur, dilengkapi katalog online (OPAC) dan manajemen peminjaman otomatis.</p>
+                        <span class="badge-price mb-4">Mulai Rp 3 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-5.png" alt="Demo Website Perpustakaan" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">5. Website Perpustakaan Digital</h3>
+                        <p class="text-white/70 text-sm mb-4">Katalog online (OPAC) & peminjaman otomatis — pustakawan fokus melayani, bukan mencatat manual.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Katalog OPAC pencarian buku real-time</li>
+                            <li>✓ Peminjaman & pengembalian otomatis</li>
+                            <li>✓ Notifikasi jatuh tempo ke anggota</li>
+                            <li>✓ Laporan statistik koleksi & kunjungan</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Ukuran koleksi & jumlah anggota menentukan harga final.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Perpustakaan" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Perpustakaan.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="https://demo.michizaru-studio.vercel.app/perpustakaan" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 6. Website MLM / Digital Networking Holding Company (Kalimat disamakan) -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <!-- 6. Website MLM / Digital Networking -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-6.png" class="glass-img"></div>
+                        <span class="badge-price mb-4">Mulai Rp 6 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-6.png" alt="Demo Website MLM" class="glass-img"></div>
                         <h3 class="text-2xl font-bold mb-2">6. Website MLM / Digital Networking</h3>
-                        <p class="text-white/70 text-sm mb-6">Sistem manajemen jaringan multi-level terstruktur dengan perhitungan komisi otomatis, manajemen downline, dan dashboard member yang transparan.</p>
+                        <p class="text-white/70 text-sm mb-4">Jaringan bisnis Anda tumbuh, hitungan komisi tetap akurat — otomatis penuh tanpa drama spreadsheet.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Perhitungan komisi & bonus otomatis akurat</li>
+                            <li>✓ Manajemen downline & pohon jaringan</li>
+                            <li>✓ Dashboard member transparan real-time</li>
+                            <li>✓ Riwayat transaksi & sistem redeem reward</li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Skema komisi & kedalaman jaringan menentukan harga final.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20MLM" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20MLM.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="template-6/index.html" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
-                <!-- 7. Website Klinik (Kalimat disamakan) -->
-                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <!-- 7. Website Klinik -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
                     <div>
-                        <div class="text-4xl mb-4"><img src="assets/img/template-7.png" class="glass-img"></div>
-                        <h3 class="text-2xl font-bold mb-2">7. Website Klinik</h3>
-                        <p class="text-white/70 text-sm mb-6">Digitalisasi operasional fasilitas kesehatan dengan sistem antrean cerdas, manajemen jadwal poliklinik, dan reservasi janji temu medis terpusat.</p>
+                        <span class="badge-price mb-4">Mulai Rp 4,5 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-7.png" alt="Demo Website Klinik" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">7. Website Klinik + Antrean Online</h3>
+                        <p class="text-white/70 text-sm mb-4">Pasien daftar dari rumah, antrean terpantau real-time — ruang tunggu klinik Anda jadi lebih tenang.</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Pendaftaran & antrean online real-time</li>
+                            <li>✓ Manajemen jadwal poliklinik & dokter</li>
+                            <li>✓ Reservasi janji temu via WhatsApp & Email</li>
+                            <li>✓ Riwayat kunjungan & rekam medis ringkas</li>
+                            <li>✓ Tersedia AI Chatbot untuk membantu pasien membuat janji temu dengan dokter terkait</li>
+                            <li><b>✓ Fully Responsive</b></li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Jumlah poli & fitur rekam medis menentukan harga final.</p>
                     </div>
-                    <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Klinik" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3.5 rounded-xl font-bold text-sm block">Konsultasi Layanan Ini</a>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Klinik.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="template-7/index.html" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
                 </div>
 
+                <!-- 8. Website SuaraWarga -->
+                <div class="glass-card p-8 rounded-[2rem] flex flex-col justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+                    <div>
+                        <span class="badge-price mb-4">Mulai Rp 4,5 Jt</span>
+                        <div class="my-4"><img src="assets/img/template-8.png" alt="Demo Website Klinik" class="glass-img"></div>
+                        <h3 class="text-2xl font-bold mb-2">8. Website SuaraWarga</h3>
+                        <p class="text-white/70 text-sm mb-4">SuaraWarga platform aspirasi masyarakat untuk menyampaikan keluhan dan melaporkan masalah di lingkungan sekitar..</p>
+                        <ul class="feature-list mb-4">
+                            <li>✓ Statistik keluhan bulanan secara Real-Time</li>
+                            <li>✓ Mengajukan keluhan</li>
+                            <li>✓ Fitur melihat laporan sesama warga</li>
+                            <li>✓ Tersedia ringkasan statistik: Laporan, status laporan dan persebaran kategori terbanyak</li>
+                            <li><b>✓ Fully Responsive</b></li>
+                        </ul>
+                        <p class="price-note mb-4">💡 Estimasi dasar. Jumlah poli & fitur rekam medis menentukan harga final.</p>
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20tertarik%20dengan%20Website%20Klinik.%20Mohon%20info%20estimasinya%20ya!" target="_blank" rel="noreferrer" class="glass-btn-primary text-center py-3 rounded-xl font-bold text-sm block">💬 Cek Estimasi Saya</a>
+                        <a href="template-8/index.html" target="_blank" rel="noreferrer" class="glass-btn-demo text-center py-3 rounded-xl font-bold text-sm block">▶ Lihat Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA BAWAH -->
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-duration="1000">
+                <p class="text-white/80 text-sm mb-5">Tidak menemukan sistem yang Anda butuhkan? Kami juga menerima proyek kustom sesuai alur bisnis Anda.</p>
+                <a href="https://wa.me/6281288677669?text=Halo%20Michizaru%20Studio,%20saya%20butuh%20sistem%20web%20kustom.%20Boleh%20diskusi%20dulu?" target="_blank" rel="noreferrer" class="glass-btn-primary inline-block px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wide">💬 Diskusikan Proyek Kustom Saya</a>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="py-12 text-center border-t border-white/10 glass-nav">
-        <p class="text-white/70 text-xs font-bold uppercase tracking-widest">© 2026 Michizaru Studio. All rights reserved.</p>
+        <p class="text-white/70 text-xs font-bold uppercase tracking-widest">&copy; 2026 Michizaru Studio. Hak Cipta Dilindungi.</p>
+        <p class="text-white/50 text-xs mt-2">Sistem Terintegrasi dengan <a href="https://www.birohmatika.com/" target="_blank" rel="noreferrer" class="text-pink-400 font-bold">Birohmatika Alliance</a></p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
