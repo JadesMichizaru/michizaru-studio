@@ -344,6 +344,30 @@ body {
 }
 
 /* ============================================================
+   RESPONSIF TABLET & MOBILE (Perbaikan Gambar Terhimpit)
+   ============================================================ */
+@media (max-width: 992px) {
+    #about .container.flex-row,
+    #about .flex-row {
+        flex-direction: column !important; /* Paksa bertumpuk ke bawah */
+        gap: 30px;
+    }
+
+    .about-img-box {
+        width: 100%;
+        order: 1; /* Posisikan gambar di atas */
+    }
+
+    .about-text-box {
+        width: 100%;
+        order: 2; /* Posisikan teks di bawah gambar */
+    }
+    
+    .about-text-box h2 {
+        font-size: 1.75rem; /* Penyesuaian ukuran judul di layar kecil */
+    }
+}
+/* ============================================================
    7. SERVICES & KATALOG SECTION
    ============================================================ */
 .card-grid {
