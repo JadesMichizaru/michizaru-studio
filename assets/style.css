@@ -24,13 +24,17 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
 }
 
 body {
     background-color: #0f172a;
     color: var(--text-white);
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
 }
 
 /* ============================================================
