@@ -114,13 +114,18 @@
     </section>
 
     <!-- ================= ABOUT & COUNTER ================= -->
-    <section id="about" class="section grad-2">
-        <div class="container flex-row" data-aos="fade-up">
-            <div class="about-img-box" data-aos="fade-right">
-                <img src="assets/img/hero-bg.jpg" alt="Tim Michizaru Studio" class="glass-img">
+    <section id="about" class="section grad-2 overflow-hidden">
+        <!-- Menggunakan flex-col untuk seluler/tablet (gambar di atas teks) 
+             dan lg:flex-row untuk layar komputer (samping-sampingan) -->
+        <div class="container flex flex-col lg:flex-row items-center gap-8" data-aos="fade-up">
+            
+            <!-- Gambar akan otomatis berada di atas pada layar HP & Tablet -->
+            <div class="about-img-box w-full lg:w-1/2" data-aos="fade-up">
+                <img src="assets/img/hero-bg.jpg" alt="Tim Michizaru Studio" class="glass-img w-full h-auto object-cover rounded-2xl">
             </div>
 
-            <div class="about-text-box" data-aos="fade-left">
+            <!-- Teks berada di bawah gambar pada layar HP & Tablet -->
+            <div class="about-text-box w-full lg:w-1/2" data-aos="fade-up">
                 <h4 class="sub-title">Kenapa Memilih Kami?</h4>
                 <h2>Partner Digital yang Benar-Benar Mengerti Target Bisnis Anda.</h2>
                 <p>
@@ -142,6 +147,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
