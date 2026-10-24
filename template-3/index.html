@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPAC | Perpustakaan Universitas Nusantara</title>
+<meta name="description" content="Katalog daring (OPAC) Perpustakaan Universitas Nusantara. Cari koleksi cetak, e-book, dan jurnal ilmiah.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F4F5F7',
+        ink: '#0F172A',
+        meta: '#475569',
+        navy: '#0F2942',
+        navy2: '#1E293B',
+        line: '#E2E8F0',
+        amber: '#D97706',
+        sage: '#059669',
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        serif: ['Lora', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      }
+    }
+  }
+}
+</script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+<!-- ===================== HEADER ===================== -->
+<header class="bg-navy text-white sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-3 min-h-[44px]">
+        <span class="w-9 h-9 grid place-items-center bg-white/10 border border-white/20 rounded-md">
+          <i data-lucide="library" class="w-5 h-5"></i>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-extrabold tracking-tight text-sm sm:text-base">Perpustakaan Universitas Nusantara</span>
+          <span class="block text-[10px] uppercase tracking-[.2em] text-slate-300">Online Public Access Catalog</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 text-[13px] font-semibold" aria-label="Navigasi utama">
+        <a href="#" class="px-3 py-2 rounded-md bg-white/10 text-white">Katalog Utama</a>
+        <a href="#" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition">Koleksi Digital</a>
+        <a href="#" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition">Layanan Pemustaka</a>
+        <a href="#" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition">Pencarian Spesifik</a>
+        <a href="#" class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition">Bantuan &amp; FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button class="hidden sm:inline-flex items-center gap-2 text-[13px] font-semibold border border-white/25 rounded-md px-3 py-2 hover:bg-white/10 transition min-h-[44px]">
+          <i data-lucide="user-round" class="w-4 h-4"></i> Masuk Anggota
+        </button>
+        <button id="btnMenuMobile" class="lg:hidden w-11 h-11 grid place-items-center rounded-md hover:bg-white/10 transition" aria-label="Buka menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Menu mobile -->
+  <nav id="menuMobile" class="lg:hidden hidden border-t border-white/10 bg-navy2 text-sm font-semibold" aria-label="Navigasi mobile">
+    <a href="#" class="block px-6 py-3 bg-white/10">Katalog Utama</a>
+    <a href="#" class="block px-6 py-3 text-slate-300 hover:bg-white/5">Koleksi Digital</a>
+    <a href="#" class="block px-6 py-3 text-slate-300 hover:bg-white/5">Layanan Pemustaka</a>
+    <a href="#" class="block px-6 py-3 text-slate-300 hover:bg-white/5">Pencarian Spesifik</a>
+    <a href="#" class="block px-6 py-3 text-slate-300 hover:bg-white/5">Bantuan &amp; FAQ</a>
+  </nav>
+</header>
+
+<!-- ===================== KEPALA PENCARIAN ===================== -->
+<div class="bg-white border-b border-line">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+
+    <div class="flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <h1 class="font-serif-title text-2xl sm:text-3xl font-semibold text-navy">Katalog Utama</h1>
+        <p class="text-sm text-meta mt-1">Telusur <b id="jumlahTotal">0</b> judul koleksi cetak, e-book, dan jurnal dari seluruh unit perpustakaan.</p>
+      </div>
+      <div class="hidden md:flex items-center gap-5 text-xs text-meta font-medium">
+        <span class="flex items-center gap-1.5"><i data-lucide="clock-3" class="w-3.5 h-3.5"></i> Buka 07.30 s.d. 21.00 WIB</span>
+        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> 3 Unit: Pusat, Kedokteran, Vokasi</span>
+      </div>
+    </div>
+
+    <!-- Omnibox -->
+    <form id="formCari" class="mt-5 flex flex-col sm:flex-row gap-2" role="search">
+      <div class="flex flex-1">
+        <div class="relative">
+          <select id="tipeCari" aria-label="Kriteria pencarian"
+            class="appearance-none bg-navy2 text-white text-[13px] font-semibold rounded-l-md pl-3 pr-8 py-3 h-[48px] border-r border-white/10 cursor-pointer">
+            <option value="semua">Semua</option>
+            <option value="judul">Judul</option>
+            <option value="pengarang">Pengarang</option>
+            <option value="subjek">Subjek</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-300 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        </div>
+        <div class="relative flex-1">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          <input id="kataKunci" type="search" autocomplete="off"
+            placeholder="Cari judul buku, penulis, subjek, atau nomor ISBN..."
+            class="w-full h-[48px] pl-10 pr-4 text-sm border border-line border-l-0 rounded-r-md sm:rounded-r-none bg-white focus:border-slate-900">
+        </div>
+      </div>
+      <button type="submit" class="h-[48px] px-6 bg-navy text-white text-sm font-bold rounded-md hover:bg-navy2 transition min-w-[120px]">
+        Cari Katalog
+      </button>
+    </form>
+
+    <!-- Pencarian Lanjutan -->
+    <div class="mt-3">
+      <button id="btnLanjutan" class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-meta hover:text-navy transition min-h-[44px]" aria-expanded="false">
+        <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+        Pencarian Lanjutan
+        <i data-lucide="chevron-down" class="w-3.5 h-3.5" id="ikonPanah"></i>
+      </button>
+      <div id="panelLanjutan" class="hidden mt-2 border border-line rounded-md bg-paper p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wide text-meta mb-1">Tahun Terbit</label>
+          <select id="fTahun" class="w-full text-sm border border-line rounded-md px-3 py-2.5 bg-white">
+            <option value="">Semua Tahun</option>
+            <option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>&lt; 2022</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wide text-meta mb-1">Bahasa</label>
+          <select id="fBahasa" class="w-full text-sm border border-line rounded-md px-3 py-2.5 bg-white">
+            <option value="">Semua Bahasa</option>
+            <option>Indonesia</option><option>Inggris</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wide text-meta mb-1">Jenis Media</label>
+          <select id="fMedia" class="w-full text-sm border border-line rounded-md px-3 py-2.5 bg-white">
+            <option value="">Semua Media</option>
+            <option value="Cetak">Cetak</option>
+            <option value="E-Book">E-Book</option>
+            <option value="Jurnal">Jurnal</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wide text-meta mb-1">Ketersediaan</label>
+          <select id="fStatus" class="w-full text-sm border border-line rounded-md px-3 py-2.5 bg-white">
+            <option value="">Semua Status</option>
+            <option value="Tersedia">Tersedia di Rak</option>
+            <option value="Dipinjam">Sedang Dipinjam</option>
+            <option value="Referensi">Koleksi Referensi</option>
+            <option value="Ebook">Tersedia E-Book</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ISI: HASIL ===================== -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
+
+  <!-- Bilah hasil -->
+  <div class="flex items-center justify-between gap-3 flex-wrap mb-5">
+    <p class="text-sm text-meta"><b id="jumlahHasil" class="text-navy">0</b> koleksi ditemukan <span id="infoKata" class="font-serif-title italic"></span></p>
+
+    <div class="flex items-center gap-2">
+      <label for="urutkan" class="text-[11px] font-bold uppercase tracking-wide text-meta">Urutkan</label>
+      <select id="urutkan" class="text-[13px] font-semibold border border-line rounded-md px-2.5 py-2 bg-white">
+        <option value="relevansi">Relevansi</option>
+        <option value="judul">Judul A sampai Z</option>
+        <option value="tahun-desc">Tahun Terbit (Terbaru)</option>
+        <option value="tahun-asc">Tahun Terbit (Terlama)</option>
+      </select>
+
+      <div class="flex border border-line rounded-md overflow-hidden" role="group" aria-label="Ganti tampilan">
+        <button id="viewGrid" class="w-10 h-10 grid place-items-center bg-navy text-white transition" aria-label="Tampilan grid" title="Tampilan grid">
+          <i data-lucide="layout-grid" class="w-4 h-4"></i>
+        </button>
+        <button id="viewList" class="w-10 h-10 grid place-items-center bg-white text-meta hover:text-navy transition" aria-label="Tampilan daftar" title="Tampilan daftar">
+          <i data-lucide="rows-3" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wadah hasil -->
+  <div id="wadahHasil"></div>
+
+  <!-- Keadaan kosong -->
+  <div id="keadaanKosong" class="hidden text-center py-20">
+    <div class="w-14 h-14 mx-auto grid place-items-center rounded-full bg-white border border-line mb-4">
+      <i data-lucide="book-x" class="w-6 h-6 text-slate-400"></i>
+    </div>
+    <h3 class="font-serif-title text-xl font-semibold text-navy">Tidak Ada Hasil yang Cocok</h3>
+    <p class="text-sm text-meta mt-2 max-w-md mx-auto">Periksa ejaan kata kunci Anda, atau coba gunakan istilah yang lebih umum. Anda juga dapat menghapus sebagian filter pencarian lanjutan.</p>
+    <button id="btnReset" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-white bg-navy rounded-md px-5 py-2.5 hover:bg-navy2 transition min-h-[44px]">
+      <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Atur Ulang Pencarian
+    </button>
+  </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t-2 border-navy bg-white mt-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+    <div>
+      <h4 class="font-extrabold text-navy text-xs uppercase tracking-widest mb-2">Perpustakaan Universitas Nusantara</h4>
+      <p class="text-meta text-[13px] leading-relaxed">Jl. Ilmu No. 1, Kampus Universitas Nusantara.<br>Layanan sirkulasi: Senin sampai Jumat, 07.30 s.d. 21.00 WIB.</p>
+    </div>
+    <div>
+      <h4 class="font-extrabold text-navy text-xs uppercase tracking-widest mb-2">Kontak</h4>
+      <p class="text-meta text-[13px]">Telp. (021) 555-0117 ext. 12<br>Email: layanan@lib.nusantara.ac.id</p>
+    </div>
+    <div>
+      <h4 class="font-extrabold text-navy text-xs uppercase tracking-widest mb-2">Kebijakan</h4>
+      <ul class="text-meta text-[13px] space-y-1">
+        <li><a href="#" class="hover:text-navy underline underline-offset-2">Tata tertib pemustaka</a></li>
+        <li><a href="#" class="hover:text-navy underline underline-offset-2">Denda dan kehilangan koleksi</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== DRAWER DETAIL BUKU ===================== -->
+<div id="overlay" class="overlay fixed inset-0 bg-slate-900/50 z-40 opacity-0 pointer-events-none"></div>
+
+<aside id="drawer" class="drawer fixed inset-y-0 right-0 z-50 w-full max-w-md bg-paper shadow-2xl translate-x-full flex flex-col" role="dialog" aria-modal="true" aria-labelledby="judulDrawer">
+  <div class="flex items-center justify-between px-5 py-4 bg-navy text-white shrink-0">
+    <h2 id="judulDrawer" class="text-sm font-bold uppercase tracking-widest">Detail Katalog</h2>
+    <button id="btnTutupDrawer" class="w-10 h-10 grid place-items-center rounded-md hover:bg-white/10 transition" aria-label="Tutup detail">
+      <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+  </div>
+  <div id="isiDrawer" class="overflow-y-auto flex-1 p-5"></div>
+</aside>
+
+<!-- ===================== BOTTOM SHEET FILTER (MOBILE) ===================== -->
+<div id="sheetOverlay" class="overlay fixed inset-0 bg-slate-900/50 z-40 opacity-0 pointer-events-none"></div>
+<div id="bottomSheet" class="bottomsheet fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-2xl translate-y-full max-h-[80vh] overflow-y-auto lg:hidden" role="dialog" aria-modal="true">
+  <div class="sticky top-0 bg-white px-5 py-3 border-b border-line flex items-center justify-between">
+    <h3 class="font-bold text-navy text-sm uppercase tracking-widest">Filter Pencarian</h3>
+    <button id="btnTutupSheet" class="w-10 h-10 grid place-items-center rounded-md hover:bg-slate-100" aria-label="Tutup filter"><i data-lucide="x" class="w-5 h-5"></i></button>
+  </div>
+  <div id="isiSheet" class="p-5"></div>
+  <div class="sticky bottom-0 bg-white border-t border-line p-4 flex gap-2">
+    <button id="btnResetSheet" class="flex-1 h-12 border border-line rounded-md font-bold text-sm text-meta">Atur Ulang</button>
+    <button id="btnTerapkan" class="flex-1 h-12 bg-navy text-white rounded-md font-bold text-sm">Terapkan Filter</button>
+  </div>
+</div>
+
+<!-- Tombol filter mengambang khusus mobile -->
+<button id="btnFilterMobile" class="lg:hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-2 bg-navy text-white font-bold text-sm px-5 h-12 rounded-full shadow-lg min-h-[44px]">
+  <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filter
+</button>
+
+<!-- Toast -->
+<div id="toast" class="toast fixed bottom-5 right-5 z-[60] bg-navy text-white text-sm font-semibold px-4 py-3 rounded-md shadow-xl translate-y-24 opacity-0 flex items-center gap-2 max-w-xs">
+  <i data-lucide="check" class="w-4 h-4 shrink-0"></i><span id="teksToast"></span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

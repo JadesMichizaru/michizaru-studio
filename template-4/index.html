@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MichizaruStay — Curated premium stays for slow living, privacy, and meaningful experiences."
+    >
+
+    <meta
+        name="theme-color"
+        content="#FBF9F5"
+    >
+
+    <title>MichizaruStay — Curated Stays</title>
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
+
+        <div class="header-inner">
+
+            <!-- Brand -->
+            <a
+                href="#home"
+                class="brand"
+                aria-label="MichizaruStay Home"
+            >
+                <span class="brand-primary">
+                    Michizaru
+                </span>
+
+                <span class="brand-secondary">
+                    Stay
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav
+                class="desktop-nav"
+                aria-label="Primary navigation"
+            >
+
+                <a href="#destinations">
+                    Destinations
+                </a>
+
+                <a href="#stays">
+                    Curated Stays
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#host">
+                    Host
+                </a>
+
+                <!-- Language -->
+                <div class="language-dropdown">
+
+                    <button
+                        type="button"
+                        class="language-toggle"
+                        id="languageToggle"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        ID
+                        <span aria-hidden="true">
+                            ↓
+                        </span>
+                    </button>
+
+                    <div
+                        class="language-menu"
+                        id="languageMenu"
+                        role="menu"
+                    >
+
+                        <button
+                            type="button"
+                            role="menuitem"
+                            data-language="ID"
+                        >
+                            Bahasa Indonesia
+                        </button>
+
+                        <button
+                            type="button"
+                            role="menuitem"
+                            data-language="EN"
+                        >
+                            English
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Header actions -->
+            <div class="header-actions">
+
+                <a
+                    href="#host"
+                    class="header-host-link"
+                >
+                    Become a Host
+                </a>
+
+                <a
+                    href="#signin"
+                    class="btn btn-dark btn-header"
+                >
+                    Sign In / Register
+                </a>
+
+                <!-- Mobile button -->
+                <button
+                    type="button"
+                    class="mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobileDrawer"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE DRAWER
+    ====================================================== -->
+
+    <div
+        class="drawer-overlay"
+        id="drawerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <aside
+        class="mobile-drawer"
+        id="mobileDrawer"
+        aria-label="Mobile navigation"
+        aria-hidden="true"
+    >
+
+        <div class="drawer-header">
+
+            <a
+                href="#home"
+                class="brand"
+            >
+                <span class="brand-primary">
+                    Michizaru
+                </span>
+
+                <span class="brand-secondary">
+                    Stay
+                </span>
+            </a>
+
+
+            <button
+                type="button"
+                class="drawer-close"
+                id="drawerClose"
+                aria-label="Close navigation menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav">
+
+            <a href="#destinations">
+                Destinations
+            </a>
+
+            <a href="#stays">
+                Curated Stays
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+            <a href="#host">
+                Host
+            </a>
+
+            <a href="#signin">
+                Sign In / Register
+            </a>
+
+        </nav>
+
+
+        <div class="drawer-footer">
+
+            <p>
+                Crafted for slower mornings,
+                thoughtful spaces, and meaningful stays.
+            </p>
+
+            <div class="drawer-language">
+
+                <button
+                    type="button"
+                    class="active"
+                    data-language-mobile="ID"
+                >
+                    ID
+                </button>
+
+                <button
+                    type="button"
+                    data-language-mobile="EN"
+                >
+                    EN
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-container">
+
+                <!-- Editorial content -->
+                <div class="hero-copy">
+
+                    <p class="eyebrow">
+                        CURATED HOSPITALITY
+                    </p>
+
+
+                    <h1>
+                        Find solace
+                        <em>in unmatched spaces.</em>
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Tempat tinggal yang dipilih dengan cermat
+                        untuk mereka yang menghargai ketenangan,
+                        privasi, dan perjalanan yang bermakna.
+
+                    </p>
+
+
+                    <div class="hero-meta">
+
+                        <span>
+                            Bali
+                        </span>
+
+                        <span>
+                            Kyoto
+                        </span>
+
+                        <span>
+                            Lombok
+                        </span>
+
+                        <span>
+                            Yogyakarta
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero visual -->
+                <div class="hero-visual">
+
+                    <div class="hero-main-image image-placeholder">
+
+                        <div class="image-overlay"></div>
+
+                        <div class="hero-image-caption">
+
+                            <span>
+                                Ubud, Bali
+                            </span>
+
+                            <strong>
+                                A quiet house among the trees
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-side-image image-placeholder">
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vertical-caption">
+                            SLOW
+                            <br>
+                            LIVING
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SEARCH WIDGET
+            ================================================== -->
+            <div class="search-container">
+
+                <form
+                    class="search-widget"
+                    id="searchForm"
+                    novalidate
+                >
+
+                    <!-- Mobile trigger -->
+                    <button
+                        type="button"
+                        class="mobile-search-trigger"
+                        id="mobileSearchTrigger"
+                        aria-expanded="false"
+                        aria-controls="searchFields"
+                    >
+                        <span>
+                            Where would you like to stay?
+                        </span>
+
+                        <span class="search-trigger-icon">
+                            +
+                        </span>
+                    </button>
+
+
+                    <div
+                        class="search-fields"
+                        id="searchFields"
+                    >
+
+                        <!-- Destination -->
+                        <div class="search-field destination-field">
+
+                            <label for="destination">
+                                Destination
+                            </label>
+
+                            <div class="field-control">
+
+                                <span
+                                    class="field-icon"
+                                    aria-hidden="true"
+                                >
+                                    ◌
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="destination"
+                                    name="destination"
+                                    placeholder="Where are you going?"
+                                    autocomplete="off"
+                                    maxlength="80"
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="destinationError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Check-in -->
+                        <div class="search-field">
+
+                            <label for="checkIn">
+                                Check-in
+                            </label>
+
+                            <div class="field-control">
+
+                                <span
+                                    class="field-icon"
+                                    aria-hidden="true"
+                                >
+                                    □
+                                </span>
+
+                                <input
+                                    type="date"
+                                    id="checkIn"
+                                    name="checkIn"
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="checkInError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Check-out -->
+                        <div class="search-field">
+
+                            <label for="checkOut">
+                                Check-out
+                            </label>
+
+                            <div class="field-control">
+
+                                <span
+                                    class="field-icon"
+                                    aria-hidden="true"
+                                >
+                                    □
+                                </span>
+
+                                <input
+                                    type="date"
+                                    id="checkOut"
+                                    name="checkOut"
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="checkOutError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Guests -->
+                        <div class="search-field guests-field">
+
+                            <label for="guests">
+                                Guests
+                            </label>
+
+                            <div class="field-control">
+
+                                <span
+                                    class="field-icon"
+                                    aria-hidden="true"
+                                >
+                                    ◇
+                                </span>
+
+                                <select
+                                    id="guests"
+                                    name="guests"
+                                >
+
+                                    <option value="">
+                                        Add guests
+                                    </option>
+
+                                    <option value="1">
+                                        1 Guest
+                                    </option>
+
+                                    <option value="2">
+                                        2 Guests
+                                    </option>
+
+                                    <option value="3">
+                                        3 Guests
+                                    </option>
+
+                                    <option value="4">
+                                        4 Guests
+                                    </option>
+
+                                    <option value="5">
+                                        5 Guests
+                                    </option>
+
+                                    <option value="6">
+                                        6 Guests
+                                    </option>
+
+                                    <option value="7">
+                                        7 Guests
+                                    </option>
+
+                                    <option value="8">
+                                        8 Guests
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="guestsError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- Search Button -->
+                        <button
+                            type="submit"
+                            class="search-submit"
+                            aria-label="Search stays"
+                        >
+                            <span>
+                                Search
+                            </span>
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Search result note -->
+                <div
+                    class="search-status"
+                    id="searchStatus"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+
+            <!-- Quick filters -->
+            <div class="quick-filters">
+
+                <span class="quick-label">
+                    Browse by mood
+                </span>
+
+                <button
+                    type="button"
+                    class="filter-pill"
+                    data-filter="Private Villa"
+                >
+                    Private Villa
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-pill"
+                    data-filter="Ryokan Modern"
+                >
+                    Ryokan Modern
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-pill"
+                    data-filter="Cabin Retreat"
+                >
+                    Cabin Retreat
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-pill"
+                    data-filter="Beachfront Stay"
+                >
+                    Beachfront Stay
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURED PROPERTIES
+        ================================================== -->
+        <section
+            class="section"
+            id="stays"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            THE COLLECTION
+                        </p>
+
+                        <h2>
+                            Stays worth slowing down for.
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="#all-stays"
+                        class="text-link"
+                    >
+                        View all stays
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Properties -->
+                <div class="property-grid">
+
+                    <!-- ================= PROPERTY 1 ================= -->
+                    <article
+                        class="property-card"
+                        data-property
+                        data-location="Ubud, Bali"
+                    >
+
+                        <div class="property-image image-placeholder property-image-one">
+
+                            <span class="property-tag">
+                                VERIFIED
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="wishlist-button"
+                                aria-label="Add Ubud House to wishlist"
+                                aria-pressed="false"
+                                data-wishlist
+                            >
+                                ♡
+                            </button>
+
+
+                            <div class="property-overlay"></div>
+
+                        </div>
+
+
+                        <div class="property-content">
+
+                            <div class="property-title-row">
+
+                                <div>
+
+                                    <h3>
+                                        The Canopy House
+                                    </h3>
+
+                                    <p>
+                                        Ubud, Bali
+                                    </p>
+
+                                </div>
+
+
+                                <div class="property-rating">
+
+                                    <span>
+                                        ★
+                                    </span>
+
+                                    4.96
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="property-bottom">
+
+                                <span class="property-type">
+                                    Private Villa
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Rp 3.2 jt
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= PROPERTY 2 ================= -->
+                    <article
+                        class="property-card"
+                        data-property
+                        data-location="Kyoto, Japan"
+                    >
+
+                        <div class="property-image image-placeholder property-image-two">
+
+                            <span class="property-tag">
+                                SUPERHOST
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="wishlist-button"
+                                aria-label="Add Kyoto House to wishlist"
+                                aria-pressed="false"
+                                data-wishlist
+                            >
+                                ♡
+                            </button>
+
+
+                            <div class="property-overlay"></div>
+
+                        </div>
+
+
+                        <div class="property-content">
+
+                            <div class="property-title-row">
+
+                                <div>
+
+                                    <h3>
+                                        Kumo House
+                                    </h3>
+
+                                    <p>
+                                        Kyoto, Japan
+                                    </p>
+
+                                </div>
+
+
+                                <div class="property-rating">
+
+                                    <span>
+                                        ★
+                                    </span>
+
+                                    4.91
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="property-bottom">
+
+                                <span class="property-type">
+                                    Ryokan Modern
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        ¥ 28,000
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= PROPERTY 3 ================= -->
+                    <article
+                        class="property-card"
+                        data-property
+                        data-location="Kintamani, Bali"
+                    >
+
+                        <div class="property-image image-placeholder property-image-three">
+
+                            <span class="property-tag">
+                                VERIFIED
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="wishlist-button"
+                                aria-label="Add Mountain Cabin to wishlist"
+                                aria-pressed="false"
+                                data-wishlist
+                            >
+                                ♡
+                            </button>
+
+
+                            <div class="property-overlay"></div>
+
+                        </div>
+
+
+                        <div class="property-content">
+
+                            <div class="property-title-row">
+
+                                <div>
+
+                                    <h3>
+                                        Haneul Cabin
+                                    </h3>
+
+                                    <p>
+                                        Kintamani, Bali
+                                    </p>
+
+                                </div>
+
+
+                                <div class="property-rating">
+
+                                    <span>
+                                        ★
+                                    </span>
+
+                                    4.89
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="property-bottom">
+
+                                <span class="property-type">
+                                    Cabin Retreat
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Rp 2.1 jt
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= PROPERTY 4 ================= -->
+                    <article
+                        class="property-card"
+                        data-property
+                        data-location="Lombok, Indonesia"
+                    >
+
+                        <div class="property-image image-placeholder property-image-four">
+
+                            <span class="property-tag">
+                                NEW
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="wishlist-button"
+                                aria-label="Add Beach Villa to wishlist"
+                                aria-pressed="false"
+                                data-wishlist
+                            >
+                                ♡
+                            </button>
+
+
+                            <div class="property-overlay"></div>
+
+                        </div>
+
+
+                        <div class="property-content">
+
+                            <div class="property-title-row">
+
+                                <div>
+
+                                    <h3>
+                                        Sora Beach House
+                                    </h3>
+
+                                    <p>
+                                        Lombok, Indonesia
+                                    </p>
+
+                                </div>
+
+
+                                <div class="property-rating">
+
+                                    <span>
+                                        ★
+                                    </span>
+
+                                    4.94
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="property-bottom">
+
+                                <span class="property-type">
+                                    Beachfront Stay
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Rp 4.5 jt
+                                    </strong>
+
+                                    <span>
+                                        / night
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EXPERIENCE / STORY
+        ================================================== -->
+        <section
+            class="section experience-section"
+            id="experience"
+        >
+
+            <div class="section-container experience-layout">
+
+                <!-- Text -->
+                <div class="experience-copy">
+
+                    <p class="eyebrow">
+                        THE MICHIZARU WAY
+                    </p>
+
+                    <h2>
+                        Stay somewhere
+                        that feels like
+                        <em>you.</em>
+                    </h2>
+
+                    <p class="experience-lead">
+
+                        MichizaruStay hadir bukan sekadar sebagai
+                        platform booking. Kami memilih ruang yang
+                        mempunyai karakter — tempat yang membuat
+                        Anda ingin tinggal sedikit lebih lama.
+
+                    </p>
+
+
+                    <!-- Values -->
+                    <div class="values-list">
+
+                        <div class="value-item">
+
+                            <span class="value-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Comfort
+                                </h3>
+
+                                <p>
+                                    Ruang yang nyaman, tenang,
+                                    dan terasa personal.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="value-item">
+
+                            <span class="value-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Privacy
+                                </h3>
+
+                                <p>
+                                    Lebih sedikit distraksi.
+                                    Lebih banyak ruang untuk diri sendiri.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="value-item">
+
+                            <span class="value-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Curated
+                                </h3>
+
+                                <p>
+                                    Hanya properti yang lolos
+                                    standar kurasi kami.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#about"
+                        class="text-link"
+                    >
+                        Discover our philosophy
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Asymmetric image composition -->
+                <div class="experience-visual">
+
+                    <div class="experience-image experience-image-main image-placeholder">
+
+                        <div class="image-overlay"></div>
+
+                        <span>
+                            A slower kind of luxury
+                        </span>
+
+                    </div>
+
+
+                    <div class="experience-image experience-image-small image-placeholder">
+
+                        <div class="image-overlay"></div>
+
+                    </div>
+
+
+                    <div class="experience-note">
+
+                        <span>
+                            17
+                        </span>
+
+                        <p>
+                            carefully selected
+                            stays
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DESTINATIONS
+        ================================================== -->
+        <section
+            class="section destinations-section"
+            id="destinations"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DESTINATIONS
+                        </p>
+
+                        <h2>
+                            Places with their own rhythm.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="destination-grid">
+
+                    <a
+                        href="#stays"
+                        class="destination-card destination-large"
+                    >
+
+                        <div class="destination-image destination-bali"></div>
+
+                        <div class="destination-content">
+
+                            <span>
+                                Indonesia
+                            </span>
+
+                            <strong>
+                                Bali
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#stays"
+                        class="destination-card"
+                    >
+
+                        <div class="destination-image destination-kyoto"></div>
+
+                        <div class="destination-content">
+
+                            <span>
+                                Japan
+                            </span>
+
+                            <strong>
+                                Kyoto
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#stays"
+                        class="destination-card"
+                    >
+
+                        <div class="destination-image destination-lombok"></div>
+
+                        <div class="destination-content">
+
+                            <span>
+                                Indonesia
+                            </span>
+
+                            <strong>
+                                Lombok
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#stays"
+                        class="destination-card"
+                    >
+
+                        <div class="destination-image destination-yogyakarta"></div>
+
+                        <div class="destination-content">
+
+                            <span>
+                                Indonesia
+                            </span>
+
+                            <strong>
+                                Yogyakarta
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TESTIMONIALS
+        ================================================== -->
+        <section
+            class="section testimonials-section"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GUEST NOTES
+                        </p>
+
+                        <h2>
+                            The details they remember.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="slider-controls">
+
+                        <button
+                            type="button"
+                            id="testimonialPrev"
+                            class="slider-button"
+                            aria-label="Previous testimonial"
+                        >
+                            ←
+                        </button>
+
+                        <button
+                            type="button"
+                            id="testimonialNext"
+                            class="slider-button"
+                            aria-label="Next testimonial"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="testimonial-slider"
+                    id="testimonialSlider"
+                >
+
+                    <!-- Testimonial 1 -->
+                    <article class="testimonial-card">
+
+                        <div class="testimonial-rating">
+                            ★★★★★
+                        </div>
+
+                        <blockquote>
+                            “Ada ketenangan yang sulit
+                            dijelaskan ketika pertama kali
+                            membuka pintu. Semua detail terasa
+                            dipikirkan dengan sangat baik.”
+                        </blockquote>
+
+                        <div class="guest-profile">
+
+                            <div class="guest-avatar">
+                                AR
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Aisha Rahma
+                                </strong>
+
+                                <span>
+                                    Jakarta · The Canopy House
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Testimonial 2 -->
+                    <article class="testimonial-card">
+
+                        <div class="testimonial-rating">
+                            ★★★★★
+                        </div>
+
+                        <blockquote>
+                            “Bukan sekadar tempat untuk
+                            bermalam. Rasanya seperti menemukan
+                            ruang pribadi di tengah perjalanan.”
+                        </blockquote>
+
+                        <div class="guest-profile">
+
+                            <div class="guest-avatar">
+                                DK
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Daniel K.
+                                </strong>
+
+                                <span>
+                                    Singapore · Kumo House
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial-card">
+
+                        <div class="testimonial-rating">
+                            ★★★★★
+                        </div>
+
+                        <blockquote>
+                            “Saya suka bagaimana properti yang
+                            dipilih Michizaru tidak terlihat
+                            seragam. Setiap tempat memiliki jiwa.”
+                        </blockquote>
+
+                        <div class="guest-profile">
+
+                            <div class="guest-avatar">
+                                NT
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Natasya T.
+                                </strong>
+
+                                <span>
+                                    Surabaya · Haneul Cabin
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HOST CTA
+        ================================================== -->
+        <section
+            class="host-section"
+            id="host"
+        >
+
+            <div class="section-container">
+
+                <div class="host-card">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            FOR HOSTS
+                        </p>
+
+                        <h2>
+                            Have a space
+                            worth sharing?
+                        </h2>
+
+                        <p>
+                            Bergabung dengan koleksi MichizaruStay
+                            dan hadirkan properti Anda kepada
+                            guest yang menghargai kualitas.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-light"
+                    >
+                        Become a Host
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NEWSLETTER
+        ================================================== -->
+        <section class="newsletter-section">
+
+            <div class="section-container newsletter-layout">
+
+                <div>
+
+                    <p class="eyebrow">
+                        STAY IN THE KNOW
+                    </p>
+
+                    <h2>
+                        Notes from elsewhere.
+                    </h2>
+
+                </div>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm"
+                    novalidate
+                >
+
+                    <label for="newsletterEmail">
+                        Join our journal
+                    </label>
+
+                    <div class="newsletter-input-row">
+
+                        <input
+                            type="email"
+                            id="newsletterEmail"
+                            name="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            aria-label="Subscribe to newsletter"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                    <small
+                        id="newsletterStatus"
+                        aria-live="polite"
+                    ></small>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+
+        <div class="section-container footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a
+                    href="#home"
+                    class="brand footer-logo"
+                >
+
+                    <span class="brand-primary">
+                        Michizaru
+                    </span>
+
+                    <span class="brand-secondary">
+                        Stay
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Curated stays for slower mornings,
+                    thoughtful spaces, and meaningful journeys.
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a href="#" aria-label="Instagram">
+                        Instagram
+                    </a>
+
+                    <a href="#" aria-label="Pinterest">
+                        Pinterest
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Explore -->
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="#destinations">
+                    Destinations
+                </a>
+
+                <a href="#stays">
+                    Curated Stays
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+            </div>
+
+
+            <!-- Company -->
+            <div class="footer-column">
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#host">
+                    Become a Host
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- Legal / Currency -->
+            <div class="footer-column">
+
+                <h3>
+                    More
+                </h3>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <div class="currency-selector">
+
+                    <span>
+                        Currency
+                    </span>
+
+                    <select
+                        id="currencySelect"
+                        aria-label="Currency"
+                    >
+
+                        <option value="IDR">
+                            IDR — Rupiah
+                        </option>
+
+                        <option value="USD">
+                            USD — Dollar
+                        </option>
+
+                        <option value="JPY">
+                            JPY — Yen
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+
+            <div class="section-container footer-bottom-inner">
+
+                <span>
+                    © 2026 MichizaruStay.
+                    All rights reserved.
+                </span>
+
+                <span>
+                    Made for meaningful stays.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SEARCH RESULT MODAL
+    ====================================================== -->
+    <div
+        class="result-modal"
+        id="resultModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="result-modal-overlay"
+            id="resultModalOverlay"
+        ></div>
+
+
+        <div
+            class="result-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="resultModalTitle"
+        >
+
+            <button
+                type="button"
+                class="result-modal-close"
+                id="resultModalClose"
+                aria-label="Close result"
+            >
+                ×
+            </button>
+
+
+            <p class="eyebrow">
+                SEARCH
+            </p>
+
+            <h2 id="resultModalTitle">
+                Your stay details
+            </h2>
+
+            <div
+                id="resultSummary"
+                class="result-summary"
+            ></div>
+
+
+            <a
+                href="#stays"
+                class="btn btn-dark result-modal-cta"
+                id="resultViewStays"
+            >
+                Explore available stays
+                →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
