@@ -14,7 +14,7 @@
                     Array.from(root.querySelectorAll(selector));
 
                 // Nomor WhatsApp Tujuan (Silakan ganti dengan nomor Anda)
-                const WHATSAPP_NUMBER = "6281234567890";
+                const WHATSAPP_NUMBER = "6281288677669";
 
                 // Navigasi Mobile (Smooth Slide & Fade Animation)
                 const menuToggle = $("#menu-toggle");
