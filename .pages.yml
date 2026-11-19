@@ -1,0 +1,47 @@
+media:
+  input: public/img/blog
+  output: /img/blog
+
+content:
+  - name: blog
+    label: Artikel Blog & SEO
+    type: collection
+    path: content/blog
+    filename: "{primary}.md"
+    view:
+      fields: [title, category, date, draft]
+    fields:
+      - name: title
+        label: this is article testing
+        type: string
+        required: true
+      - name: description
+        label: Meta Description SEO (140-160 karakter untuk tampil di Google)
+        type: text
+        required: true
+      - name: date
+        label: Tanggal Publikasi
+        type: date
+        required: true
+      - name: category
+        label: Kategori Artikel
+        type: select
+        options:
+          values:
+            - Jasa Website
+            - Studi Kasus
+            - UI/UX & SaaS
+            - IoT & Robotik
+      - name: image
+        label: Gambar Utama Artikel
+        type: image
+      - name: tags
+        label: Kata Kunci / Tags (pisahkan koma)
+        type: string
+      - name: draft
+        label: Simpan sebagai Draft (Sembunyikan dari publik)
+        type: boolean
+        default: false
+      - name: body
+        label: Konten Artikel Lengkap
+        type: rich-text

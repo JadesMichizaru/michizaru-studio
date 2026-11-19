@@ -1,0 +1,2207 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MichizaruEdu | Sekolah & PPDB Online 2027/2028</title>
+        <meta
+            name="description"
+            content="Website resmi MichizaruEdu. Informasi sekolah, program keahlian, berita, kalender akademik, dan pendaftaran peserta didik baru secara online."
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* ============================================================
+   DASAR & VARIABEL
+============================================================ */
+            :root {
+                --hijau-tua: #14532d;
+                --hijau: #166534;
+                --hijau-muda: #16a34a;
+                --krem: #f7f5f0;
+                --putih: #ffffff;
+                --teks: #1c2321;
+                --teks-lembut: #B8CFB3;
+                --garis: #e4e1d8;
+                --aksen: #d97706;
+                --radius: 14px;
+                --shadow: 0 2px 6px rgba(20, 40, 28, 0.07);
+                --shadow-lembut: 0 8px 24px rgba(20, 40, 28, 0.1);
+                --transisi: 0.25s ease;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+                color: var(--teks);
+                background: var(--krem);
+                line-height: 1.65;
+                font-size: 16px;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            ul {
+                list-style: none;
+            }
+            .container {
+                width: min(1120px, 92%);
+                margin: 0 auto;
+            }
+
+            h1,
+            h2,
+            h3 {
+                line-height: 1.25;
+                color: var(--hijau-tua);
+            }
+            .section-judul {
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                font-weight: 800;
+                letter-spacing: -0.5px;
+            }
+            .section-sub {
+                color: var(--teks-lembut);
+                max-width: 640px;
+                margin-top: 0.5rem;
+            }
+            .section-head {
+                margin-bottom: 2.2rem;
+            }
+            .badge-seksi {
+                display: inline-block;
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--hijau);
+                margin-bottom: 0.6rem;
+            }
+            section {
+                padding: 4.5rem 0;
+            }
+
+            /* ============================================================
+   HEADER & NAVIGASI
+============================================================ */
+            .header {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(8px);
+                border-bottom: 1px solid var(--garis);
+            }
+            .header-dalam {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 72px;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+                font-weight: 800;
+                color: var(--hijau-tua);
+                font-size: 1.05rem;
+            }
+            .logo-sekolah {
+                width: 42px;
+                height: 42px;
+                border-radius: 10px;
+                background: var(--hijau);
+                display: grid;
+                place-items: center;
+                color: #fff;
+                font-size: 1.15rem;
+                font-weight: 800;
+                flex-shrink: 0;
+            }
+            .brand small {
+                display: block;
+                font-weight: 500;
+                font-size: 0.7rem;
+                color: var(--teks-lembut);
+                letter-spacing: 0.5px;
+            }
+            .nav {
+                display: flex;
+                ccolor: #fff;
+                gap: 1.6rem;
+                align-items: center;
+            }
+            .nav a {
+                font-size: 0.92rem;
+                font-weight: 600;
+                color: var(--teks-lembut);
+                transition: color var(--transisi);
+                position: relative;
+            }
+            .nav a:hover {
+                color: var(--hijau);
+            }
+            .nav a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                width: 0;
+                height: 2px;
+                background: var(--hijau-muda);
+                transition: width var(--transisi);
+            }
+            .nav a:hover::after {
+                width: 100%;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                justify-content: center;
+                padding: 0.75rem 1.5rem;
+                border-radius: 10px;
+                font-weight: 700;
+                font-size: 0.92rem;
+                cursor: pointer;
+                border: none;
+                transition: all var(--transisi);
+            }
+            .btn-hijau {
+                background: var(--hijau);
+                color: #fff;
+            }
+            .btn-hijau:hover {
+                background: var(--hijau-muda);
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lembut);
+            }
+            .btn-garis {
+                background: transparent;
+                color: var(--hijau);
+                border: 2px solid var(--hijau);
+            }
+            .btn-garis:hover {
+                background: var(--hijau);
+                color: #fff;
+            }
+            .btn-nav {
+                padding: 0.55rem 1.15rem;
+                font-size: 0.85rem;
+            }
+            .btn-amber {
+                background: var(--aksen);
+                color: #fff;
+            }
+            .btn-amber:hover {
+                background: #b45309;
+                transform: translateY(-2px);
+            }
+            .burger {
+                display: none;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--hijau-tua);
+            }
+
+            /* ============================================================
+   HERO
+============================================================ */
+            .hero {
+                padding: 0;
+                color: #fff;
+                position: relative;
+                background:
+                    linear-gradient(
+                        rgba(11, 45, 25, 0.82),
+                        rgba(11, 45, 25, 0.82)
+                    ),
+                    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop")
+                        center/cover no-repeat;
+            }
+            .hero-dalam {
+                padding: 6.5rem 0 6rem;
+                max-width: 720px;
+            }
+            .hero-tag {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.14);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 0.35rem 1rem;
+                border-radius: 99px;
+                font-size: 0.78rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                margin-bottom: 1.2rem;
+            }
+            .hero h1 {
+                font-size: clamp(2rem, 5vw, 3.2rem);
+                color: #fff;
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+            .hero p {
+                margin: 1.2rem 0 2rem;
+                font-size: 1.05rem;
+                color: rgba(255, 255, 255, 0.85);
+                max-width: 560px;
+            }
+            .hero-aksi {
+                display: flex;
+                gap: 0.9rem;
+                flex-wrap: wrap;
+            }
+            .btn-putih {
+                background: #fff;
+                color: var(--hijau-tua);
+            }
+            .btn-putih:hover {
+                background: var(--krem);
+                transform: translateY(-2px);
+            }
+            .btn-transparan {
+                background: transparent;
+                color: #fff;
+                border: 2px solid rgba(255, 255, 255, 0.55);
+            }
+            .btn-transparan:hover {
+                background: rgba(255, 255, 255, 0.12);
+            }
+            .hero-strip {
+                background: var(--hijau-tua);
+                padding: 1rem 0;
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.85);
+                border-top: 1px solid rgba(255, 255, 255, 0.12);
+            }
+            .hero-strip .container {
+                display: flex;
+                gap: 2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-strip b {
+                color: #fff;
+            }
+
+            /* ============================================================
+               PENGUMUMAN (TEXT MENGALIR / RUNNING TEXT)
+            ============================================================ */
+            .pengumuman-berjalan {
+                background: #fef9c3;
+                color: #854d0e;
+                padding: 0.65rem 0;
+                overflow: hidden;
+                border-bottom: 1px solid #fde68a;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+
+            .pengumuman-berjalan .container {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                overflow: hidden;
+            }
+
+            .pengumuman-berjalan .label {
+                background: var(--aksen);
+                color: #fff;
+                font-size: 0.7rem;
+                padding: 0.2rem 0.7rem;
+                border-radius: 6px;
+                white-space: nowrap;
+                letter-spacing: 1px;
+                z-index: 2; /* Agar badge tetap diam di kiri */
+            }
+
+            .marquee-wrapper {
+                overflow: hidden;
+                white-space: nowrap;
+                width: 100%;
+            }
+
+            .marquee-content {
+                display: inline-block;
+                padding-left: 100%; /* Mulai berjalan dari ujung kanan */
+                animation: marquee 18s linear infinite;
+            }
+
+            .marquee-wrapper:hover .marquee-content {
+                animation-play-state: paused; /* Berhenti sejenak saat kursor diarahkan ke teks */
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            /* ============================================================
+   SAMBUTAN
+============================================================ */
+            .sambutan {
+                background: var(--putih);
+            }
+            .sambutan-grid {
+                display: grid;
+                grid-template-columns: 340px 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+            .foto-kepsek {
+                aspect-ratio: 4/5;
+                border-radius: var(--radius);
+                overflow: hidden;
+                background: linear-gradient(
+                    160deg,
+                    var(--hijau),
+                    var(--hijau-muda)
+                );
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+            .foto-kepsek svg {
+                width: 88%;
+            }
+            .sambutan-nama {
+                font-weight: 800;
+                color: var(--hijau-tua);
+                margin-top: 1rem;
+            }
+            .sambutan-jabatan {
+                font-size: 0.85rem;
+                color: var(--teks-lembut);
+            }
+            .sambutan-isi p {
+                margin-bottom: 1rem;
+                color: #3a4540;
+            }
+            .kutipan {
+                border-left: 4px solid var(--hijau-muda);
+                background: var(--krem);
+                padding: 1rem 1.3rem;
+                border-radius: 0 var(--radius) var(--radius) 0;
+                font-style: italic;
+                color: var(--hijau-tua);
+                margin: 1.4rem 0;
+                font-size: 0.95rem;
+            }
+
+            /* ============================================================
+   PROGRAM KEAHLIAN & STATISTIK
+============================================================ */
+            .jurusan-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .jurusan-card {
+                background: var(--putih);
+                border: 1px solid var(--garis);
+                border-radius: var(--radius);
+                padding: 1.8rem;
+                transition: all var(--transisi);
+            }
+            .jurusan-card:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-lembut);
+                border-color: var(--hijau-muda);
+            }
+            .jurusan-ikon {
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+                background: #e7f5ec;
+                color: var(--hijau);
+                display: grid;
+                place-items: center;
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            .jurusan-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            .jurusan-card p {
+                font-size: 0.9rem;
+                color: var(--teks-lembut);
+            }
+            .jurusan-sertif {
+                margin-top: 1rem;
+                display: flex;
+                gap: 0.4rem;
+                flex-wrap: wrap;
+            }
+            .chip {
+                font-size: 0.72rem;
+                background: var(--krem);
+                border: 1px solid var(--garis);
+                padding: 0.2rem 0.6rem;
+                border-radius: 99px;
+                color: var(--teks-lembut);
+                font-weight: 600;
+            }
+
+            .statistik {
+                background: var(--hijau-tua);
+                color: #fff;
+            }
+            .statistik-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 2rem;
+                text-align: center;
+            }
+            .stat-angka {
+                font-size: 2.4rem;
+                font-weight: 800;
+                font-family: "JetBrains Mono", monospace;
+                color: #86efac;
+            }
+            .stat-label {
+                font-size: 0.88rem;
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            /* ============================================================
+   BERITA
+============================================================ */
+            .berita {
+                background: var(--putih);
+            }
+            .berita-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .berita-card {
+                border: 1px solid var(--garis);
+                border-radius: var(--radius);
+                overflow: hidden;
+                background: var(--putih);
+                transition: all var(--transisi);
+            }
+            .berita-card:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lembut);
+            }
+            .berita-gambar {
+                height: 170px;
+                background-size: cover;
+                background-position: center;
+            }
+            .g1 {
+                background: linear-gradient(135deg, #166534, #22c55e);
+            }
+            .g2 {
+                background: linear-gradient(135deg, #0f766e, #2dd4bf);
+            }
+            .g3 {
+                background: linear-gradient(135deg, #92400e, #f59e0b);
+            }
+            .berita-isi {
+                padding: 1.3rem;
+            }
+            .berita-tanggal {
+                font-size: 0.75rem;
+                color: var(--aksen);
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .berita-isi h3 {
+                font-size: 1.02rem;
+                margin: 0.4rem 0 0.5rem;
+            }
+            .berita-isi p {
+                font-size: 0.88rem;
+                color: var(--teks-lembut);
+            }
+            .berita-link {
+                display: inline-block;
+                margin-top: 0.9rem;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: var(--hijau);
+            }
+            .berita-link:hover {
+                color: var(--hijau-muda);
+            }
+
+            /* ============================================================
+   GALERI
+============================================================ */
+            .galeri-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1rem;
+            }
+            .galeri-item {
+                height: 200px;
+                border-radius: var(--radius);
+                overflow: hidden;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                transition: transform var(--transisi);
+            }
+            .galeri-item:hover {
+                transform: scale(1.03);
+            }
+            .galeri-item span {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 0.8rem;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #fff;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+            }
+
+            /* ============================================================
+   PPDB
+============================================================ */
+            .ppdb {
+                background: #eef4ee;
+            }
+            .ppdb-langkah {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                margin-bottom: 2.5rem;
+            }
+            .langkah-card {
+                background: var(--putih);
+                border-radius: var(--radius);
+                padding: 1.4rem;
+                text-align: center;
+                border: 1px solid var(--garis);
+            }
+            .langkah-nomor {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: var(--hijau);
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-weight: 800;
+                margin: 0 auto 0.8rem;
+                font-family: "JetBrains Mono", monospace;
+            }
+            .langkah-card h4 {
+                font-size: 0.95rem;
+                margin-bottom: 0.3rem;
+                color: var(--hijau-tua);
+            }
+            .langkah-card p {
+                font-size: 0.82rem;
+                color: var(--teks-lembut);
+            }
+
+            .form-ppdb {
+                background: var(--putih);
+                border-radius: var(--radius);
+                border: 1px solid var(--garis);
+                padding: 2rem;
+                box-shadow: var(--shadow);
+            }
+            .form-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            .form-baris-penuh {
+                grid-column: 1/-1;
+            }
+            label {
+                display: block;
+                font-size: 0.85rem;
+                font-weight: 700;
+                margin-bottom: 0.35rem;
+                color: var(--hijau-tua);
+            }
+            label .wajib {
+                color: #dc2626;
+            }
+            input,
+            select,
+            textarea {
+                width: 100%;
+                padding: 0.7rem 0.9rem;
+                border: 1.5px solid var(--garis);
+                border-radius: 10px;
+                font-family: inherit;
+                font-size: 0.92rem;
+                background: #fbfaf8;
+                transition: border var(--transisi);
+            }
+            input:focus,
+            select:focus,
+            textarea:focus {
+                outline: none;
+                border-color: var(--hijau-muda);
+                background: #fff;
+            }
+            textarea {
+                resize: vertical;
+                min-height: 90px;
+            }
+            input[type="file"] {
+                padding: 0.55rem 0.9rem;
+                font-size: 0.85rem;
+            }
+            .info-berkas {
+                font-size: 0.78rem;
+                color: var(--teks-lembut);
+                margin-top: 0.3rem;
+            }
+
+            /* Bukti Pendaftaran */
+            .bukti-wrap {
+                display: none;
+                margin-top: 2rem;
+            }
+            .bukti-kartu {
+                border: 2px dashed var(--hijau-muda);
+                border-radius: var(--radius);
+                padding: 2rem;
+                background: #f0fdf4;
+            }
+            .bukti-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 1rem;
+                border-bottom: 2px solid var(--hijau-muda);
+                padding-bottom: 1rem;
+                margin-bottom: 1.2rem;
+            }
+            .nomor-reg {
+                font-family: "JetBrains Mono", monospace;
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: var(--hijau);
+                letter-spacing: 1px;
+            }
+            .bukti-status {
+                background: var(--hijau);
+                color: #fff;
+                font-size: 0.72rem;
+                font-weight: 700;
+                padding: 0.25rem 0.8rem;
+                border-radius: 99px;
+                letter-spacing: 1px;
+            }
+            .bukti-detail {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem 2rem;
+                font-size: 0.9rem;
+            }
+            .bukti-detail dt {
+                color: var(--teks-lembut);
+                font-size: 0.78rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 700;
+            }
+            .bukti-detail dd {
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+            .bukti-aksi {
+                display: flex;
+                gap: 0.8rem;
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            /* Cek Kelulusan */
+            .cek-kelulusan {
+                margin-top: 2.5rem;
+                background: var(--hijau-tua);
+                border-radius: var(--radius);
+                padding: 2.2rem;
+                color: #fff;
+            }
+            .cek-kelulusan h3 {
+                color: #fff;
+                margin-bottom: 0.4rem;
+            }
+            .cek-kelulusan p {
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-bottom: 1.2rem;
+            }
+            .cek-form {
+                display: flex;
+                gap: 0.8rem;
+                max-width: 520px;
+            }
+            .cek-form input {
+                flex: 1;
+                border: none;
+            }
+            .hasil-cek {
+                margin-top: 1.2rem;
+                font-size: 0.95rem;
+                display: none;
+                padding: 1rem 1.3rem;
+                border-radius: 10px;
+                font-weight: 600;
+            }
+            .hasil-lulus {
+                background: #dcfce7;
+                color: #14532d;
+                display: block;
+            }
+            .hasil-tunggu {
+                background: #fef9c3;
+                color: #854d0e;
+                display: block;
+            }
+
+            /* ============================================================
+   KALENDER & KONTAK
+============================================================ */
+            .kalender {
+                background: var(--putih);
+            }
+            .kalender-tabel {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.92rem;
+            }
+            .kalender-tabel th {
+                background: var(--hijau);
+                color: #fff;
+                padding: 0.8rem 1rem;
+                text-align: left;
+                font-size: 0.8rem;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .kalender-tabel td {
+                padding: 0.85rem 1rem;
+                border-bottom: 1px solid var(--garis);
+            }
+            .kalender-tabel tr:hover td {
+                background: var(--krem);
+            }
+            .bulan {
+                font-weight: 800;
+                color: var(--hijau-tua);
+                white-space: nowrap;
+            }
+            .kontak-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+                align-items: start;
+            }
+            .kontak-item {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1.4rem;
+            }
+            .kontak-ikon {
+                width: 44px;
+                height: 44px;
+                border-radius: 10px;
+                background: #e7f5ec;
+                color: var(--hijau);
+                display: grid;
+                place-items: center;
+                font-size: 1.15rem;
+                flex-shrink: 0;
+            }
+            .kontak-item h4 {
+                font-size: 0.95rem;
+                color: var(--hijau-tua);
+            }
+            .kontak-item p {
+                font-size: 0.88rem;
+                color: var(--teks-lembut);
+            }
+            .peta {
+                border-radius: var(--radius);
+                overflow: hidden;
+                border: 1px solid var(--garis);
+                box-shadow: var(--shadow);
+            }
+            .peta iframe {
+                width: 100%;
+                height: 340px;
+                border: 0;
+                display: block;
+            }
+
+            /* ============================================================
+   FOOTER
+============================================================ */
+            footer {
+                background: var(--hijau-tua);
+                color: rgba(255, 255, 255, 0.8);
+                padding: 3.5rem 0 0;
+                font-size: 0.9rem;
+            }
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1.4fr;
+                gap: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+            footer h4 {
+                color: #fff;
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+            footer ul li {
+                margin-bottom: 0.55rem;
+            }
+            footer a:hover {
+                color: #86efac;
+            }
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 1.2rem 0;
+                font-size: 0.8rem;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.55);
+            }
+            .tombol-atas {
+                position: fixed;
+                right: 1.5rem;
+                bottom: 1.5rem;
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                background: var(--hijau);
+                color: #fff;
+                border: none;
+                font-size: 1.2rem;
+                cursor: pointer;
+                box-shadow: var(--shadow-lembut);
+                opacity: 0;
+                pointer-events: none;
+                transition: all var(--transiti);
+                z-index: 90;
+            }
+            .tombol-atas.tampil {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            /* ============================================================
+   RESPONSIF
+============================================================ */
+            @media (max-width: 880px) {
+                .nav {
+                    position: fixed;
+                    inset: 72px 0 auto 0;
+                    background: #fff;
+                    flex-direction: column;
+                    padding: 1.5rem;
+                    gap: 1.1rem;
+                    border-bottom: 1px solid var(--garis);
+                    transform: translateY(-130%);
+                    transition: transform 0.3s ease;
+                    box-shadow: var(--shadow-lembut);
+                }
+                .nav.buka {
+                    transform: translateY(0);
+                }
+                .burger {
+                    display: block;
+                }
+                .sambutan-grid,
+                .kontak-grid {
+                    grid-template-columns: 1fr;
+                }
+                .form-grid {
+                    grid-template-columns: 1fr;
+                }
+                .cek-form {
+                    flex-direction: column;
+                }
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .kalender-scroll {
+                    overflow-x: auto;
+                }
+                .kalender-tabel {
+                    min-width: 560px;
+                }
+                .hero-dalam {
+                    padding: 4rem 0;
+                }
+            }
+            @media (max-width: 520px) {
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* ============================================================
+   CETAK PDF (Bukti Pendaftaran)
+============================================================ */
+            @media print {
+                body * {
+                    visibility: hidden;
+                }
+                .bukti-kartu,
+                .bukti-kartu * {
+                    visibility: visible;
+                }
+                .bukti-kartu {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    border: 2px solid var(--hijau-tua);
+                    background: #fff;
+                    padding: 2.5rem;
+                }
+                .bukti-aksi {
+                    display: none;
+                }
+            }
+        </style>
+        <base target="_blank" />
+    </head>
+    <body>
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+            <div class="container header-dalam">
+                <a href="#beranda" class="brand">
+                    <div class="logo-sekolah">N1</div>
+                    <div>
+                        MichizaruEdu<small
+                            >Terampil, Berkarakter, Siap Kerja</small
+                        >
+                    </div>
+                </a>
+                <nav class="nav" id="navMenu">
+                    <a href="#beranda">Beranda</a>
+                    <a href="#profil">Profil</a>
+                    <a href="#jurusan">Jurusan</a>
+                    <a href="#berita">Berita</a>
+                    <a href="#kalender">Kalender</a>
+                    <a href="#kontak">Kontak</a>
+                    <a href="#ppdb" class="btn btn-hijau btn-nav"
+                        >Daftar PPDB</a
+                    >
+                </nav>
+                <button class="burger" id="burgerBtn" aria-label="Buka menu">
+                    ☰
+                </button>
+            </div>
+        </header>
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="beranda">
+            <div class="container hero-dalam" data-aos="fade-up">
+                <span class="hero-tag">PPDB Tahun Ajaran 2027/2028 Dibuka</span>
+                <h1>
+                    Mendidik Generasi Terampil dan Berkarakter untuk Indonesia
+                </h1>
+                <p>
+                    MichizaruEdu menghadirkan pendidikan kejuruan yang
+                    berkualitas dengan dukungan guru berpengalaman, fasilitas
+                    modern, dan kemitraan luas dengan dunia industri.
+                </p>
+                <div class="hero-aksi">
+                    <a href="#ppdb" class="btn btn-putih">Daftar PPDB Online</a>
+                    <a href="#profil" class="btn btn-transparan"
+                        >Kenali Sekolah Kami</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <div class="hero-strip">
+            <div class="container">
+                <span><b>Akreditasi A</b></span>
+                <span>Kurikulum Merdeka</span>
+                <span><b>3</b> Program Keahlian</span>
+                <span><b>96%</b> Lulusan Terserap Kerja</span>
+            </div>
+        </div>
+
+        <!-- ================= PENGUMUMAN ================= -->
+        <div class="pengumuman-berjalan">
+            <div class="container">
+                <span class="label">INFO</span>
+                <div class="marquee-wrapper">
+                    <div class="marquee-content">
+                        Pendaftaran PPDB gelombang 1 dibuka 1 November s.d. 31 Desember 2026. Gelombang 2 dibuka Januari 2027.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SAMBUTAN ================= -->
+        <section class="sambutan" id="profil">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Sambutan Kepala Sekolah</span>
+                    <h2 class="section-judul">
+                        Selamat Datang di MichizaruEdu
+                    </h2>
+                </div>
+                <div class="sambutan-grid">
+                    <div data-aos="fade-right">
+                        <div
+                            class="foto-kepsek"
+                            role="img"
+                            aria-label="Foto Kepala Sekolah"
+                        >
+                            <svg
+                                viewBox="0 0 200 240"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="100"
+                                    cy="82"
+                                    r="42"
+                                    fill="#d8c9b0"
+                                />
+                                <path
+                                    d="M100 130c-48 0-70 30-70 70v40h140v-40c0-40-22-70-70-70z"
+                                    fill="#f0f4f1"
+                                />
+                                <path
+                                    d="M85 140l15 18 15-18"
+                                    fill="none"
+                                    stroke="#14532d"
+                                    stroke-width="5"
+                                />
+                            </svg>
+                        </div>
+                        <p class="sambutan-nama">
+                            Drs. H. Bambang Prasetyo, M.Pd.
+                        </p>
+                        <p class="sambutan-jabatan">Kepala MichizaruEdu</p>
+                    </div>
+                    <div class="sambutan-isi" data-aos="fade-left">
+                        <p>
+                            Assalamu'alaikum warahmatullahi wabarakatuh. Selamat
+                            datang di website resmi MichizaruEdu. Website ini
+                            kami sediakan sebagai sarana informasi bagi orang
+                            tua, calon siswa, dan masyarakat umum.
+                        </p>
+                        <p>
+                            Kami percaya setiap anak memiliki potensi yang
+                            berbeda. Tugas sekolah adalah membuka jalan agar
+                            potensi itu berkembang menjadi keterampilan nyata
+                            yang berguna untuk masa depannya. Di MichizaruEdu, siswa tidak hanya belajar teori, tetapi langsung
+                            berlatih dengan peralatan yang sesuai standar
+                            industri.
+                        </p>
+                        <div class="kutipan">
+                            "Sekolah yang baik bukanlah yang menuntut siswa
+                            menjadi sama, melainkan yang membantu setiap siswa
+                            menjadi versi terbaik dirinya."
+                        </div>
+                        <p>
+                            Kami mengundang Bapak dan Ibu orang tua untuk
+                            mengenal lebih dekat program kami melalui halaman
+                            ini, atau datang langsung ke sekolah pada jam kerja.
+                            Terima kasih atas kepercayaan Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VISI MISI ================= -->
+        <section id="visimisi" style="padding-top: 0">
+            <div class="container">
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(300px, 1fr)
+                        );
+                        gap: 1.5rem;
+                    "
+                >
+                    <div class="jurusan-card" data-aos="fade-up">
+                        <div class="jurusan-ikon">◎</div>
+                        <h3>Visi</h3>
+                        <p>
+                            Terwujudnya peserta didik yang beriman, terampil,
+                            berkarakter mulia, dan siap bersaing di dunia kerja
+                            maupun melanjutkan pendidikan ke jenjang yang lebih
+                            tinggi.
+                        </p>
+                    </div>
+                    <div
+                        class="jurusan-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="jurusan-ikon">✓</div>
+                        <h3>Misi</h3>
+                        <p>
+                            Menyelenggarakan pembelajaran berbasis praktik,
+                            membina karakter melalui kegiatan keagamaan dan
+                            kepemimpinan siswa, serta menjalin kemitraan aktif
+                            dengan dunia usaha dan industri.
+                        </p>
+                    </div>
+                    <div
+                        class="jurusan-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="jurusan-ikon">★</div>
+                        <h3>Prestasi & Ekstrakurikuler</h3>
+                        <p>
+                            Juara 2 LKS Kompetensi Keahlian Web Technology
+                            tingkat provinsi 2026, juara harapan 1 robotika
+                            tingkat nasional, serta Pramuka, Paskibra, Rohis,
+                            futsal, dan paduan suara.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= JURUSAN ================= -->
+        <section id="jurusan" style="padding-top: 0">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Program Keahlian</span>
+                    <h2 class="section-judul">Jurusan yang Tersedia</h2>
+                    <p class="section-sub">
+                        Tiga program keahlian dengan kurikulum yang disesuaikan
+                        kebutuhan industri dan dilengkapi sertifikasi
+                        kompetensi.
+                    </p>
+                </div>
+                <div class="jurusan-grid">
+                    <article class="jurusan-card" data-aos="fade-up">
+                        <div class="jurusan-ikon">⌘</div>
+                        <h3>Teknik Komputer dan Jaringan</h3>
+                        <p>
+                            Mempelajari instalasi jaringan, administrasi server,
+                            keamanan jaringan, serta perakitan dan perawatan
+                            komputer. Lulusan siap bekerja di perusahaan IT dan
+                            penyedia layanan jaringan.
+                        </p>
+                        <div class="jurusan-sertif">
+                            <span class="chip">MikroTik</span
+                            ><span class="chip">BNSP</span
+                            ><span class="chip">Cisco</span>
+                        </div>
+                    </article>
+                    <article
+                        class="jurusan-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="jurusan-ikon">✎</div>
+                        <h3>Desain Komunikasi Visual</h3>
+                        <p>
+                            Mempelajari desain grafis, ilustrasi, fotografi, dan
+                            media digital. Siswa berlatih dengan perangkat
+                            desain profesional dan mengerjakan proyek nyata
+                            untuk calon klien.
+                        </p>
+                        <div class="jurusan-sertif">
+                            <span class="chip">Adobe Certified</span
+                            ><span class="chip">BNSP</span>
+                        </div>
+                    </article>
+                    <article
+                        class="jurusan-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="jurusan-ikon">⚙</div>
+                        <h3>Teknik Kendaraan Ringan</h3>
+                        <p>
+                            Mempelajari perawatan mesin, sistem kelistrikan, dan
+                            sistem rem kendaraan ringan modern. Didukung bengkel
+                            praktik standar industri dan guru produktif
+                            berpengalaman.
+                        </p>
+                        <div class="jurusan-sertif">
+                            <span class="chip">OSCAR</span
+                            ><span class="chip">BNSP</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STATISTIK ================= -->
+        <section class="statistik">
+            <div class="container statistik-grid" data-aos="fade-up">
+                <div>
+                    <div class="stat-angka" data-target="1250">0</div>
+                    <div class="stat-label">Siswa Aktif</div>
+                </div>
+                <div>
+                    <div class="stat-angka" data-target="86">0</div>
+                    <div class="stat-label">Guru dan Tenaga Kependidikan</div>
+                </div>
+                <div>
+                    <div class="stat-angka" data-target="35">0</div>
+                    <div class="stat-label">Mitra Industri</div>
+                </div>
+                <div>
+                    <div class="stat-angka" data-target="96">0</div>
+                    <div class="stat-label">Persen Lulusan Terserap</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BERITA ================= -->
+        <section class="berita" id="berita">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Portal Informasi</span>
+                    <h2 class="section-judul">Berita dan Pengumuman Terbaru</h2>
+                </div>
+                <div class="berita-grid">
+                    <article class="berita-card" data-aos="fade-up">
+                        <div class="berita-gambar g1"></div>
+                        <div class="berita-isi">
+                            <span class="berita-tanggal">12 Oktober 2026</span>
+                            <h3>PPDB Tahun Ajaran 2027/2028 Resmi Dibuka</h3>
+                            <p>
+                                Pendaftaran dilakukan sepenuhnya secara online
+                                melalui formulir di website ini. Kuota terbatas
+                                untuk setiap jurusan.
+                            </p>
+                            <a class="berita-link" href="#ppdb"
+                                >Baca Selengkapnya →</a
+                            >
+                        </div>
+                    </article>
+                    <article
+                        class="berita-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="berita-gambar g2"></div>
+                        <div class="berita-isi">
+                            <span class="berita-tanggal"
+                                >28 September 2026</span
+                            >
+                            <h3>MoU Kemitraan dengan 8 Perusahaan Baru</h3>
+                            <p>
+                                Sekolah menandatangani kerja sama baru untuk
+                                program magang dan penyerapan lulusan di bidang
+                                IT, desain, dan otomotif.
+                            </p>
+                            <a class="berita-link" href="#profil"
+                                >Baca Selengkapnya →</a
+                            >
+                        </div>
+                    </article>
+                    <article
+                        class="berita-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="berita-gambar g3"></div>
+                        <div class="berita-isi">
+                            <span class="berita-tanggal"
+                                >10 September 2026</span
+                            >
+                            <h3>Tim Robotika Raih Juara Harapan 1 Nasional</h3>
+                            <p>
+                                Tim robotika MichizaruEdu meraih juara
+                                harapan 1 pada kompetisi robotika tingkat
+                                nasional di Jakarta.
+                            </p>
+                            <a class="berita-link" href="#profil"
+                                >Baca Selengkapnya →</a
+                            >
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALERI ================= -->
+        <section id="galeri">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Galeri</span>
+                    <h2 class="section-judul">Aktivitas Sekolah</h2>
+                </div>
+                <div class="galeri-grid" data-aos="fade-up">
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #14532d,
+                                #22c55e
+                            );
+                        "
+                    >
+                        <span>Upacara Bendera Senin Pagi</span>
+                    </div>
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #0f766e,
+                                #2dd4bf
+                            );
+                        "
+                    >
+                        <span>Praktik di Bengkel TKR</span>
+                    </div>
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #92400e,
+                                #fbbf24
+                            );
+                        "
+                    >
+                        <span>Pameran Karya DKV</span>
+                    </div>
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #1e3a8a,
+                                #60a5fa
+                            );
+                        "
+                    >
+                        <span>Lomba LKS Tingkat Provinsi</span>
+                    </div>
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #7c2d12,
+                                #fb923c
+                            );
+                        "
+                    >
+                        <span>Kegiatan Pramuka</span>
+                    </div>
+                    <div
+                        class="galeri-item"
+                        style="
+                            background: linear-gradient(
+                                135deg,
+                                #3b0764,
+                                #c084fc
+                            );
+                        "
+                    >
+                        <span>Pentas Seni Akhir Tahun</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PPDB ================= -->
+        <section class="ppdb" id="ppdb">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">PPDB Online</span>
+                    <h2 class="section-judul">
+                        Pendaftaran Peserta Didik Baru
+                    </h2>
+                    <p class="section-sub">
+                        Isi formulir di bawah ini dengan data yang benar.
+                        Setelah terkirim, Anda akan mendapatkan nomor registrasi
+                        yang dapat dicetak sebagai bukti pendaftaran.
+                    </p>
+                </div>
+
+                <div class="ppdb-langkah" data-aos="fade-up">
+                    <div class="langkah-card">
+                        <div class="langkah-nomor">1</div>
+                        <h4>Isi Formulir</h4>
+                        <p>Lengkapi data diri dan pilihan jurusan.</p>
+                    </div>
+                    <div class="langkah-card">
+                        <div class="langkah-nomor">2</div>
+                        <h4>Unggah Berkas</h4>
+                        <p>Scan akta, KK, dan ijazah (PDF atau JPG).</p>
+                    </div>
+                    <div class="langkah-card">
+                        <div class="langkah-nomor">3</div>
+                        <h4>Cetak Bukti</h4>
+                        <p>Simpan nomor registrasi dan cetak bukti.</p>
+                    </div>
+                    <div class="langkah-card">
+                        <div class="langkah-nomor">4</div>
+                        <h4>Cek Kelulusan</h4>
+                        <p>Pantau pengumuman dengan nomor registrasi.</p>
+                    </div>
+                </div>
+
+                <form
+                    class="form-ppdb"
+                    id="formPpdb"
+                    data-aos="fade-up"
+                    novalidate
+                >
+                    <div class="form-grid">
+                        <div>
+                            <label for="nama"
+                                >Nama Lengkap
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="nama"
+                                placeholder="Sesuai akta kelahiran"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="nisn"
+                                >NISN <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="nisn"
+                                placeholder="10 digit nomor NISN"
+                                maxlength="10"
+                                inputmode="numeric"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="tempatLahir"
+                                >Tempat Lahir
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="tempatLahir"
+                                placeholder="Kota atau kabupaten"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="tanggalLahir"
+                                >Tanggal Lahir
+                                <span class="wajib">*</span></label
+                            >
+                            <input type="date" id="tanggalLahir" required />
+                        </div>
+                        <div>
+                            <label for="jenisKelamin"
+                                >Jenis Kelamin
+                                <span class="wajib">*</span></label
+                            >
+                            <select id="jenisKelamin" required>
+                                <option value="">Pilih</option>
+                                <option>Laki-laki</option>
+                                <option>Perempuan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="asalSekolah"
+                                >Asal Sekolah (SMP/MTs)
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="text"
+                                id="asalSekolah"
+                                placeholder="Nama sekolah asal"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="jalur"
+                                >Jalur Pendaftaran
+                                <span class="wajib">*</span></label
+                            >
+                            <select id="jalur" required>
+                                <option value="">Pilih jalur</option>
+                                <option>Zonasi</option>
+                                <option>Prestasi</option>
+                                <option>Afirmasi</option>
+                                <option>Reguler</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="jurusan"
+                                >Pilihan Jurusan
+                                <span class="wajib">*</span></label
+                            >
+                            <select id="jurusan" required>
+                                <option value="">Pilih jurusan</option>
+                                <option>Teknik Komputer dan Jaringan</option>
+                                <option>Desain Komunikasi Visual</option>
+                                <option>Teknik Kendaraan Ringan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="noHp"
+                                >Nomor HP/WA Orang Tua
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="tel"
+                                id="noHp"
+                                placeholder="08xxxxxxxxxx"
+                                inputmode="tel"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="opsional, untuk pengumuman"
+                            />
+                        </div>
+                        <div class="form-baris-penuh">
+                            <label for="alamat"
+                                >Alamat Tempat Tinggal
+                                <span class="wajib">*</span></label
+                            >
+                            <textarea
+                                id="alamat"
+                                placeholder="Jalan, nomor rumah, RT/RW, kelurahan, kecamatan"
+                                required
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label for="berkasAkta"
+                                >Akta Kelahiran
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="file"
+                                id="berkasAkta"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                required
+                            />
+                            <p class="info-berkas">
+                                PDF atau gambar, maksimal 2 MB.
+                            </p>
+                        </div>
+                        <div>
+                            <label for="berkasKk"
+                                >Kartu Keluarga
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="file"
+                                id="berkasKk"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                required
+                            />
+                            <p class="info-berkas">
+                                PDF atau gambar, maksimal 2 MB.
+                            </p>
+                        </div>
+                        <div class="form-baris-penuh">
+                            <label for="berkasIjazah"
+                                >Ijazah atau Rapor SMP (Legalisir)
+                                <span class="wajib">*</span></label
+                            >
+                            <input
+                                type="file"
+                                id="berkasIjazah"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                required
+                            />
+                            <p class="info-berkas">
+                                Bagi lulusan tahun berjalan boleh memakai rapor
+                                semester akhir, maksimal 2 MB.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-baris-penuh" style="margin-top: 1.6rem">
+                        <button
+                            type="submit"
+                            class="btn btn-hijau"
+                            style="width: 100%; padding: 1rem; font-size: 1rem"
+                        >
+                            Kirim Pendaftaran
+                        </button>
+                        <p
+                            class="info-berkas"
+                            style="text-align: center; margin-top: 0.8rem"
+                        >
+                            Dengan mendaftar, Anda menyetujui pemrosesan data
+                            untuk keperluan PPDB sesuai kebijakan sekolah.
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Bukti Pendaftaran -->
+                <div class="bukti-wrap" id="buktiWrap" data-aos="fade-up">
+                    <div class="bukti-kartu" id="buktiKartu">
+                        <div class="bukti-head">
+                            <div>
+                                <h3 style="margin-bottom: 0.2rem">
+                                    Bukti Pendaftaran PPDB
+                                </h3>
+                                <p
+                                    style="
+                                        font-size: 0.85rem;
+                                        color: var(--teks-lembut);
+                                    "
+                                >
+                                    MichizaruEdu, Tahun Ajaran 2027/2028
+                                </p>
+                            </div>
+                            <div style="text-align: right">
+                                <div class="nomor-reg" id="nomorReg">-</div>
+                                <span class="bukti-status">TERDAFTAR</span>
+                            </div>
+                        </div>
+                        <dl class="bukti-detail" id="buktiDetail"></dl>
+                        <p
+                            style="
+                                font-size: 0.82rem;
+                                color: var(--teks-lembut);
+                                margin-top: 1rem;
+                            "
+                        >
+                            Simpan nomor registrasi ini. Pengumuman kelulusan
+                            dapat dicek di bagian bawah halaman PPDB atau datang
+                            langsung ke sekolah.
+                        </p>
+                        <div class="bukti-aksi">
+                            <button
+                                class="btn btn-hijau"
+                                onclick="window.print()"
+                            >
+                                Cetak Bukti (PDF)
+                            </button>
+                            <button class="btn btn-garis" id="btnDaftarLagi">
+                                Daftar Siswa Lain
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cek Kelulusan -->
+                <div class="cek-kelulusan" data-aos="fade-up">
+                    <h3>Cek Pengumuman Kelulusan</h3>
+                    <p>
+                        Masukkan nomor registrasi Anda. Contoh format:
+                        PPDB-2027-XXXX.
+                    </p>
+                    <div class="cek-form">
+                        <input
+                            type="text"
+                            id="inputCek"
+                            placeholder="PPDB-2027-XXXX"
+                            style="
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                            "
+                        />
+                        <button class="btn btn-amber" id="btnCek" type="button">
+                            Cek Status
+                        </button>
+                    </div>
+                    <div class="hasil-cek" id="hasilCek"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KALENDER ================= -->
+        <section class="kalender" id="kalender">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Kalender Akademik</span>
+                    <h2 class="section-judul">Tahun Ajaran 2026/2027</h2>
+                </div>
+                <div class="kalender-scroll" data-aos="fade-up">
+                    <table class="kalender-tabel">
+                        <thead>
+                            <tr>
+                                <th>Bulan</th>
+                                <th>Kegiatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bulan">Juli 2026</td>
+                                <td>
+                                    Kegiatan awal tahun ajaran, pembagian kelas,
+                                    dan masa pengenalan lingkungan sekolah.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Agustus 2026</td>
+                                <td>
+                                    Upacara peringatan HUT Kemerdekaan RI dan
+                                    pembukaan kegiatan ekstrakurikuler.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">September 2026</td>
+                                <td>
+                                    Ujian tengah semester ganjil dan rapat orang
+                                    tua siswa kelas X.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Desember 2026</td>
+                                <td>
+                                    Ujian akhir semester ganjil dan program
+                                    magang kelas XII.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Januari 2027</td>
+                                <td>
+                                    Libur akhir semester ganjil dan pembukaan
+                                    PPDB gelombang 2.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Maret 2027</td>
+                                <td>
+                                    Ujian tengah semester genap dan try out
+                                    ujian sekolah.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Mei 2027</td>
+                                <td>
+                                    Ujian akhir sekolah, ujian kompetensi
+                                    keahlian, dan kelulusan.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bulan">Juni 2027</td>
+                                <td>
+                                    Wisuda, pembagian rapor, dan libur akhir
+                                    tahun ajaran.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KONTAK ================= -->
+        <section id="kontak">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <span class="badge-seksi">Kontak dan Lokasi</span>
+                    <h2 class="section-judul">Hubungi Kami</h2>
+                </div>
+                <div class="kontak-grid">
+                    <div data-aos="fade-right">
+                        <div class="kontak-item">
+                            <div class="kontak-ikon">⌂</div>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>
+                                    Jl. Pendidikan Raya No. 45, Kecamatan
+                                    Cempaka, Kota Bandung, Jawa Barat 40123
+                                </p>
+                            </div>
+                        </div>
+                        <div class="kontak-item">
+                            <div class="kontak-ikon">✆</div>
+                            <div>
+                                <h4>Telepon dan WhatsApp</h4>
+                                <p>
+                                    (022) 555-0198 dan 0812-3456-7890 (jam kerja
+                                    07.00 sampai 15.30)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="kontak-item">
+                            <div class="kontak-ikon">✉</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@michizaruedu.sch.id</p>
+                            </div>
+                        </div>
+                        <div class="kontak-item">
+                            <div class="kontak-ikon">◷</div>
+                            <div>
+                                <h4>Jam Layanan</h4>
+                                <p>
+                                    Senin sampai Jumat, pukul 07.00 sampai 15.30
+                                    WIB
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="peta" data-aos="fade-left">
+                        <iframe
+                            title="Peta lokasi MichizaruEdu"
+                            src="https://maps.google.com/maps?q=Bandung%2C%20Indonesia&z=13&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <div class="container footer-grid">
+                <div>
+                    <h4>MichizaruEdu</h4>
+                    <p>
+                        Sekolah menengah kejuruan dengan tiga program keahlian
+                        yang berfokus pada keterampilan praktis, karakter, dan
+                        kesiapan kerja lulusan.
+                    </p>
+                </div>
+                <div>
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="#profil">Profil Sekolah</a></li>
+                        <li><a href="#jurusan">Program Keahlian</a></li>
+                        <li><a href="#ppdb">PPDB Online</a></li>
+                        <li><a href="#kalender">Kalender Akademik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#berita">Berita Sekolah</a></li>
+                        <li><a href="#galeri">Galeri</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                        <li><a href="#ppdb">Cek Kelulusan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li>Jl. Pendidikan Raya No. 45, Bandung</li>
+                        <li>(022) 555-0198</li>
+                        <li>info@michizaruedu.sch.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    © 2026 MichizaruEdu. Seluruh hak cipta dilindungi.
+                </div>
+            </div>
+        </footer>
+
+        <button
+            class="tombol-atas"
+            id="tombolAtas"
+            aria-label="Kembali ke atas"
+        >
+            ↑
+        </button>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            /* ============================================================
+   NAVIGASI MOBILE
+============================================================ */
+            const burger = document.getElementById("burgerBtn");
+            const navMenu = document.getElementById("navMenu");
+            burger.addEventListener("click", () =>
+                navMenu.classList.toggle("buka"),
+            );
+            navMenu
+                .querySelectorAll("a")
+                .forEach((a) =>
+                    a.addEventListener("click", () =>
+                        navMenu.classList.remove("buka"),
+                    ),
+                );
+
+            /* ============================================================
+   TOMBOL KE ATAS
+============================================================ */
+            const tombolAtas = document.getElementById("tombolAtas");
+            window.addEventListener("scroll", () => {
+                tombolAtas.classList.toggle("tampil", window.scrollY > 500);
+            });
+            tombolAtas.addEventListener("click", () =>
+                window.scrollTo({ top: 0, behavior: "smooth" }),
+            );
+
+            /* ============================================================
+   ANIMASI ON SCROLL
+============================================================ */
+            AOS.init({ duration: 700, offset: 80, once: true });
+
+            /* ============================================================
+   STATISTIK ANGKA BERJALAN
+============================================================ */
+            const statObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+                        const el = entry.target;
+                        const target = +el.dataset.target;
+                        let nilai = 0;
+                        const langkah = Math.max(1, Math.ceil(target / 60));
+                        const timer = setInterval(() => {
+                            nilai += langkah;
+                            if (nilai >= target) {
+                                nilai = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent =
+                                nilai.toLocaleString("id-ID") +
+                                (el.dataset.target === "96" ? "%" : "+");
+                        }, 25);
+                        statObserver.unobserve(el);
+                    });
+                },
+                { threshold: 0.6 },
+            );
+            document
+                .querySelectorAll(".stat-angka")
+                .forEach((el) => statObserver.observe(el));
+
+            /* ============================================================
+   VALIDASI BERKAS
+============================================================ */
+            function validasiBerkas(input) {
+                const file = input.files[0];
+                if (!file) return false;
+                const maks = 2 * 1024 * 1024; // 2 MB
+                const tipeOK = [
+                    "application/pdf",
+                    "image/jpeg",
+                    "image/png",
+                ].includes(file.type);
+                if (!tipeOK) {
+                    alert(
+                        "Berkas " +
+                            input.id +
+                            " harus berupa PDF atau gambar JPG/PNG.",
+                    );
+                    input.value = "";
+                    return false;
+                }
+                if (file.size > maks) {
+                    alert(
+                        "Ukuran berkas " +
+                            input.id +
+                            " melebihi 2 MB. Silakan kompres terlebih dahulu.",
+                    );
+                    input.value = "";
+                    return false;
+                }
+                return true;
+            }
+            ["berkasAkta", "berkasKk", "berkasIjazah"].forEach((id) => {
+                document
+                    .getElementById(id)
+                    .addEventListener("change", (e) =>
+                        validasiBerkas(e.target),
+                    );
+            });
+
+            /* ============================================================
+   FORM PPDB & NOMOR REGISTRASI
+============================================================ */
+            const formPpdb = document.getElementById("formPpdb");
+            const buktiWrap = document.getElementById("buktiWrap");
+            const buktiDetail = document.getElementById("buktiDetail");
+            const nomorRegEl = document.getElementById("nomorReg");
+            let daftarPendaftar = JSON.parse(
+                localStorage.getItem("ppdb_michizaruedu") || "[]",
+            );
+
+            formPpdb.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // Validasi NISN 10 digit angka
+                const nisn = document.getElementById("nisn").value.trim();
+                if (!/^\d{10}$/.test(nisn)) {
+                    alert("NISN harus terdiri dari 10 digit angka.");
+                    return;
+                }
+
+                // Validasi semua berkas terisi dan valid
+                for (const id of ["berkasAkta", "berkasKk", "berkasIjazah"]) {
+                    const input = document.getElementById(id);
+                    if (!input.files[0]) {
+                        alert(
+                            "Seluruh berkas wajib diunggah: Akta, KK, dan Ijazah/Rapor.",
+                        );
+                        input.focus();
+                        return;
+                    }
+                    if (!validasiBerkas(input)) return;
+                }
+
+                if (!formPpdb.checkValidity()) {
+                    formPpdb.reportValidity();
+                    return;
+                }
+
+                // Buat nomor registrasi unik
+                const kode = Math.floor(1000 + Math.random() * 9000);
+                const nomor = "PPDB-2027-" + kode;
+                nomorRegEl.textContent = nomor;
+
+                const data = {
+                    nomor,
+                    nama: document.getElementById("nama").value.trim(),
+                    nisn,
+                    tempatLahir: document
+                        .getElementById("tempatLahir")
+                        .value.trim(),
+                    tanggalLahir: document.getElementById("tanggalLahir").value,
+                    jenisKelamin: document.getElementById("jenisKelamin").value,
+                    asalSekolah: document
+                        .getElementById("asalSekolah")
+                        .value.trim(),
+                    jalur: document.getElementById("jalur").value,
+                    jurusan: document.getElementById("jurusan").value,
+                    noHp: document.getElementById("noHp").value.trim(),
+                };
+
+                daftarPendaftar.push(data);
+                localStorage.setItem(
+                    "ppdb_michizaruedu",
+                    JSON.stringify(daftarPendaftar),
+                );
+
+                buktiDetail.innerHTML = `
+    <div><dt>Nama Lengkap</dt><dd>${data.nama}</dd></div>
+    <div><dt>NISN</dt><dd style="font-family:'JetBrains Mono',monospace">${data.nisn}</dd></div>
+    <div><dt>Tempat, Tanggal Lahir</dt><dd>${data.tempatLahir}, ${new Date(data.tanggalLahir).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</dd></div>
+    <div><dt>Jenis Kelamin</dt><dd>${data.jenisKelamin}</dd></div>
+    <div><dt>Asal Sekolah</dt><dd>${data.asalSekolah}</dd></div>
+    <div><dt>Jalur Pendaftaran</dt><dd>${data.jalur}</dd></div>
+    <div><dt>Pilihan Jurusan</dt><dd>${data.jurusan}</dd></div>
+    <div><dt>Nomor HP Orang Tua</dt><dd>${data.noHp}</dd></div>
+    <div><dt>Tanggal Daftar</dt><dd>${new Date().toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</dd></div>
+    <div><dt>Tahun Ajaran</dt><dd>2027/2028</dd></div>
+  `;
+
+                buktiWrap.style.display = "block";
+                formPpdb.style.display = "none";
+                buktiWrap.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            });
+
+            document
+                .getElementById("btnDaftarLagi")
+                .addEventListener("click", () => {
+                    formPpdb.reset();
+                    formPpdb.style.display = "block";
+                    buktiWrap.style.display = "none";
+                    document.getElementById("nama").focus();
+                });
+
+            /* ============================================================
+   CEK KELULUSAN (DEMO)
+============================================================ */
+            document.getElementById("btnCek").addEventListener("click", () => {
+                const input = document
+                    .getElementById("inputCek")
+                    .value.trim()
+                    .toUpperCase();
+                const hasil = document.getElementById("hasilCek");
+                hasil.className = "hasil-cek";
+
+                if (!/^PPDB-2027-\d{4}$/.test(input)) {
+                    hasil.textContent =
+                        "Format nomor registrasi tidak dikenali. Gunakan format PPDB-2027-XXXX.";
+                    hasil.style.cssText =
+                        "display:block;background:#fee2e2;color:#991b1b";
+                    return;
+                }
+
+                const pendaftar = daftarPendaftar.find(
+                    (p) => p.nomor === input,
+                );
+                if (!pendaftar) {
+                    hasil.textContent =
+                        "Nomor registrasi tidak ditemukan. Pastikan Anda sudah mendaftar atau hubungi panitia PPDB.";
+                    hasil.style.cssText =
+                        "display:block;background:#fee2e2;color:#991b1b";
+                    return;
+                }
+
+                // Logika demo kelulusan: nomor ganjil = lulus, genap = masih verifikasi berkas
+                const angka = parseInt(input.split("-")[2], 10);
+                if (angka % 2 === 1) {
+                    hasil.textContent =
+                        "Selamat! " +
+                        pendaftar.nama +
+                        " dinyatakan LULUS seleksi PPDB jalur " +
+                        pendaftar.jalur +
+                        " pada jurusan " +
+                        pendaftar.jurusan +
+                        ". Silakan lakukan daftar ulang di sekolah paling lambat 14 hari kerja.";
+                    hasil.style.cssText =
+                        "display:block;background:#dcfce7;color:#14532d";
+                } else {
+                    hasil.textContent =
+                        "Berkas " +
+                        pendaftar.nama +
+                        " sedang dalam proses verifikasi panitia. Pengumuman berikutnya akan diinformasikan melalui nomor HP orang tua.";
+                    hasil.style.cssText =
+                        "display:block;background:#fef9c3;color:#854d0e";
+                }
+            });
+            document
+                .getElementById("inputCek")
+                .addEventListener("keydown", (e) => {
+                    if (e.key === "Enter")
+                        document.getElementById("btnCek").click();
+                });
+        </script>
+    </body>
+</html>
