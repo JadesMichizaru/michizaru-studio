@@ -12,7 +12,7 @@ content:
       fields: [title, category, date, draft]
     fields:
       - name: title
-        label: this is article testing
+        label: Judul Artikel (Gunakan Kata Kunci Target, misal: Jasa Website...)
         type: string
         required: true
       - name: description
