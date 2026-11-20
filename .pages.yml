@@ -38,6 +38,14 @@ content:
       - name: tags
         label: Kata Kunci / Tags (pisahkan koma)
         type: string
+      - name: related_posts
+        label: Artikel Terkait (Internal Linking)
+        type: reference
+        options:
+          collection: blog
+          value: _path
+          label: title
+          multiple: true
       - name: draft
         label: Simpan sebagai Draft (Sembunyikan dari publik)
         type: boolean
